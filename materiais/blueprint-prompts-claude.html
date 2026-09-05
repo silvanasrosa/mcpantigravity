@@ -383,39 +383,84 @@
       color: var(--tiffany-claro);
     }
 
-    /* ESTILOS DE IMPRESSÃO (PDF LIMPO E PERFEITO) */
+    /* ESTILOS DE IMPRESSÃO (PDF EDITORIAL DE ALTO PADRÃO) */
     @media print {
-      body {
-        background: #FFFFFF;
-        color: #000000;
-        padding: 0;
+      * {
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+        color-adjust: exact !important;
       }
-      .top-actions, .btn-copy, .btn-follow, .btn-feedback, .btn-session, .btn-pdf {
+      body {
+        background-color: #F8F5EE !important;
+        padding: 0;
+        margin: 0;
+      }
+      .top-actions, .btn-copy, .btn-pdf {
         display: none !important;
       }
-      .prompt-card, .intro-block, .card-follow, .card-feedback, .card-conversion {
-        border: 1px solid #CCC !important;
-        box-shadow: none !important;
-        page-break-inside: avoid;
+      .container {
+        max-width: 100% !important;
+        padding: 10px 20px !important;
+      }
+      .card-follow {
+        background: #063940 !important;
+        color: #FFFFFF !important;
+        page-break-inside: avoid !important;
+        break-inside: avoid !important;
+      }
+      .card-follow .btn-follow {
+        background: #ECE1C3 !important;
+        color: #063940 !important;
+      }
+      .prompt-card {
+        background: #FFFFFF !important;
+        border: 1px solid #E2DAC7 !important;
+        page-break-inside: avoid !important;
+        break-inside: avoid !important;
         margin-bottom: 20px !important;
+        display: block !important;
+        clear: both !important;
       }
       .code-box {
-        background: #F4F4F4 !important;
-        color: #111 !important;
-        border: 1px solid #CCC !important;
+        background: #063940 !important;
+        color: #E6FFFA !important;
+        border: 1px solid #195E63 !important;
+        white-space: pre-wrap !important;
+        position: static !important;
+        page-break-inside: avoid !important;
+        break-inside: avoid !important;
+        display: block !important;
+      }
+      .card-feedback {
+        background: #FFFFFF !important;
+        border: 2px dashed #3E838C !important;
+        page-break-inside: avoid !important;
+        break-inside: avoid !important;
+        display: block !important;
+        clear: both !important;
+        margin-top: 30px !important;
       }
       .card-conversion {
-        background: #F8F5EE !important;
-        color: #063940 !important;
+        background: #063940 !important;
+        color: #FFFFFF !important;
+        page-break-inside: avoid !important;
+        break-inside: avoid !important;
+        page-break-before: always !important;
+        break-before: page !important;
+        display: block !important;
+        clear: both !important;
       }
       .card-conversion h2 {
-        color: #063940 !important;
+        color: #FFFFFF !important;
       }
       .card-conversion p {
-        color: #333 !important;
+        color: #ECE1C3 !important;
       }
-      .author-sign {
-        color: #063940 !important;
+      .btn-session, .btn-feedback {
+        background: #3E838C !important;
+        color: #FFFFFF !important;
+        text-decoration: none !important;
+        display: inline-block !important;
       }
     }
 
