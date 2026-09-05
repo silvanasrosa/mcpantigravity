@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blueprint Executivo: Os 4 Mega-Prompts do Claude — Silvana Rosa</title>
+  <meta name="description" content="Como transformar 10+ anos de carreira em uma Mentoria High Ticket de R$ 6.500 a R$ 12.000 em 1 tarde com o Claude.">
+  <style>
+    :root {
+      --petroleo-escuro: #063940;
+      --petroleo-medio: #195E63;
+      --tiffany: #3E838C;
+      --tiffany-claro: #8EBDB6;
+      --fundo: #F8F5EE;
+      --card-bg: #FFFFFF;
+      --borda: #E2DAC7;
+      --texto-corpo: #2D3748;
+      --texto-escuro: #063940;
+      --creme-suave: #ECE1C3;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif;
+      background-color: var(--fundo);
+      color: var(--texto-corpo);
+      line-height: 1.65;
+      padding: 0 16px 80px;
+    }
+
+    .container {
+      max-width: 820px;
+      margin: 0 auto;
+    }
+
+    /* BARRA SUPERIOR DE AÇÕES */
+    .top-actions {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 0;
+      border-bottom: 1px solid var(--borda);
+      margin-bottom: 36px;
+    }
+
+    .brand-logo {
+      font-family: 'Georgia', serif;
+      font-size: 20px;
+      font-weight: bold;
+      color: var(--petroleo-escuro);
+      letter-spacing: 1px;
+    }
+
+    .brand-sub {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--tiffany);
+      display: block;
+      font-weight: 700;
+    }
+
+    .btn-pdf {
+      background: var(--petroleo-escuro);
+      color: #FFFFFF;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 24px;
+      font-size: 14px;
+      font-weight: 700;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.2s ease;
+      text-decoration: none;
+    }
+
+    .btn-pdf:hover {
+      background: var(--tiffany);
+      transform: translateY(-1px);
+    }
+
+    /* HEADER EDITORIAL */
+    header.doc-header {
+      margin-bottom: 36px;
+      text-align: left;
+    }
+
+    .badge-pilar {
+      display: inline-block;
+      background: rgba(62, 131, 140, 0.12);
+      border: 1px solid var(--tiffany);
+      color: var(--petroleo-escuro);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      padding: 6px 14px;
+      border-radius: 20px;
+      margin-bottom: 16px;
+    }
+
+    h1.doc-title {
+      font-family: 'Georgia', serif;
+      font-size: 34px;
+      color: var(--petroleo-escuro);
+      line-height: 1.25;
+      margin-bottom: 14px;
+      font-weight: 800;
+    }
+
+    p.doc-subtitle {
+      font-size: 18px;
+      color: var(--petroleo-medio);
+      line-height: 1.5;
+      font-weight: 500;
+    }
+
+    /* CARD DE SEGUIR NO INSTAGRAM */
+    .card-follow {
+      background: linear-gradient(135deg, #063940 0%, #195E63 100%);
+      color: #FFFFFF;
+      padding: 24px;
+      border-radius: 16px;
+      margin-bottom: 36px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      box-shadow: 0 8px 24px rgba(6, 57, 64, 0.12);
+    }
+
+    .card-follow h3 {
+      font-size: 18px;
+      font-weight: 800;
+      color: #FFFFFF;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .card-follow p {
+      font-size: 14px;
+      color: var(--creme-suave);
+      line-height: 1.5;
+    }
+
+    .btn-follow {
+      display: inline-block;
+      background: var(--creme-suave);
+      color: var(--petroleo-escuro);
+      font-size: 15px;
+      font-weight: 800;
+      text-align: center;
+      padding: 12px 24px;
+      border-radius: 24px;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      align-self: flex-start;
+    }
+
+    .btn-follow:hover {
+      background: #FFFFFF;
+      transform: translateY(-2px);
+    }
+
+    /* SEÇÕES DE CONTEÚDO */
+    .intro-block {
+      background: var(--card-bg);
+      border: 1px solid var(--borda);
+      border-radius: 16px;
+      padding: 28px;
+      margin-bottom: 32px;
+      font-size: 16px;
+    }
+
+    .intro-block h2 {
+      font-family: 'Georgia', serif;
+      font-size: 22px;
+      color: var(--petroleo-escuro);
+      margin-bottom: 12px;
+    }
+
+    .intro-block p {
+      margin-bottom: 14px;
+    }
+
+    .intro-block p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* CARD DE PROMPT */
+    .prompt-card {
+      background: var(--card-bg);
+      border: 1px solid var(--borda);
+      border-radius: 16px;
+      padding: 28px;
+      margin-bottom: 28px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.03);
+    }
+
+    .prompt-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 14px;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .prompt-tag {
+      background: rgba(62, 131, 140, 0.15);
+      color: var(--petroleo-escuro);
+      font-size: 12px;
+      font-weight: 800;
+      padding: 4px 12px;
+      border-radius: 12px;
+      letter-spacing: 1px;
+    }
+
+    .prompt-title {
+      font-size: 20px;
+      font-weight: 800;
+      color: var(--petroleo-escuro);
+      margin-bottom: 8px;
+    }
+
+    .prompt-desc {
+      font-size: 14px;
+      color: #4A5568;
+      margin-bottom: 16px;
+      font-style: italic;
+    }
+
+    .code-box {
+      background: #063940;
+      color: #E6FFFA;
+      padding: 20px;
+      border-radius: 12px;
+      font-family: 'Consolas', 'Menlo', Monaco, monospace;
+      font-size: 14px;
+      line-height: 1.6;
+      white-space: pre-wrap;
+      word-break: break-word;
+      position: relative;
+      border: 1px solid var(--petroleo-medio);
+    }
+
+    .btn-copy {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      background: var(--tiffany);
+      color: #FFFFFF;
+      border: none;
+      padding: 6px 12px;
+      border-radius: 6px;
+      font-size: 12px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    .btn-copy:hover {
+      background: var(--tiffany-claro);
+      color: var(--petroleo-escuro);
+    }
+
+    .btn-copy.copied {
+      background: #38A169;
+      color: #FFFFFF;
+    }
+
+    /* CARD DE FEEDBACK ("ME CONTE SE DEU CERTO") */
+    .card-feedback {
+      background: #FFFFFF;
+      border: 2px dashed var(--tiffany);
+      border-radius: 16px;
+      padding: 28px;
+      margin: 36px 0;
+      text-align: center;
+    }
+
+    .card-feedback h3 {
+      font-family: 'Georgia', serif;
+      font-size: 22px;
+      color: var(--petroleo-escuro);
+      margin-bottom: 10px;
+    }
+
+    .card-feedback p {
+      font-size: 15px;
+      color: #4A5568;
+      max-width: 600px;
+      margin: 0 auto 20px;
+    }
+
+    .btn-feedback {
+      display: inline-block;
+      background: var(--tiffany);
+      color: #FFFFFF;
+      font-size: 15px;
+      font-weight: 800;
+      padding: 12px 28px;
+      border-radius: 24px;
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
+
+    .btn-feedback:hover {
+      background: var(--petroleo-escuro);
+      transform: translateY(-2px);
+    }
+
+    /* CARD DE CONVERSÃO PARA SESSÃO DE 1H */
+    .card-conversion {
+      background: #063940;
+      color: #FFFFFF;
+      padding: 36px 28px;
+      border-radius: 20px;
+      text-align: center;
+      margin-top: 40px;
+      box-shadow: 0 12px 32px rgba(6, 57, 64, 0.18);
+    }
+
+    .card-conversion .tag-conv {
+      display: inline-block;
+      background: rgba(142, 189, 182, 0.2);
+      border: 1px solid var(--tiffany-claro);
+      color: var(--tiffany-claro);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: 6px 16px;
+      border-radius: 20px;
+      margin-bottom: 16px;
+    }
+
+    .card-conversion h2 {
+      font-family: 'Georgia', serif;
+      font-size: 28px;
+      color: #FFFFFF;
+      margin-bottom: 12px;
+      line-height: 1.3;
+    }
+
+    .card-conversion p {
+      font-size: 16px;
+      color: var(--creme-suave);
+      max-width: 640px;
+      margin: 0 auto 24px;
+      line-height: 1.6;
+    }
+
+    .btn-session {
+      display: inline-block;
+      background: var(--tiffany);
+      color: #FFFFFF;
+      font-size: 16px;
+      font-weight: 800;
+      padding: 16px 36px;
+      border-radius: 30px;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+    }
+
+    .btn-session:hover {
+      background: #FFFFFF;
+      color: var(--petroleo-escuro);
+      transform: translateY(-2px);
+    }
+
+    .author-sign {
+      margin-top: 24px;
+      font-size: 14px;
+      color: var(--tiffany-claro);
+    }
+
+    /* ESTILOS DE IMPRESSÃO (PDF LIMPO E PERFEITO) */
+    @media print {
+      body {
+        background: #FFFFFF;
+        color: #000000;
+        padding: 0;
+      }
+      .top-actions, .btn-copy, .btn-follow, .btn-feedback, .btn-session, .btn-pdf {
+        display: none !important;
+      }
+      .prompt-card, .intro-block, .card-follow, .card-feedback, .card-conversion {
+        border: 1px solid #CCC !important;
+        box-shadow: none !important;
+        page-break-inside: avoid;
+        margin-bottom: 20px !important;
+      }
+      .code-box {
+        background: #F4F4F4 !important;
+        color: #111 !important;
+        border: 1px solid #CCC !important;
+      }
+      .card-conversion {
+        background: #F8F5EE !important;
+        color: #063940 !important;
+      }
+      .card-conversion h2 {
+        color: #063940 !important;
+      }
+      .card-conversion p {
+        color: #333 !important;
+      }
+      .author-sign {
+        color: #063940 !important;
+      }
+    }
+
+    @media (max-width: 640px) {
+      h1.doc-title { font-size: 26px; }
+      p.doc-subtitle { font-size: 16px; }
+      .code-box { font-size: 13px; padding: 14px; }
+      .card-conversion h2 { font-size: 22px; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    
+    <!-- BARRA SUPERIOR DE AÇÕES -->
+    <div class="top-actions">
+      <div>
+        <span class="brand-logo">Silvana Rosa</span>
+        <span class="brand-sub">Mentoria de Negócios &amp; IA</span>
+      </div>
+      <button class="btn-pdf" onclick="window.print()">
+        📥 Salvar em PDF
+      </button>
+    </div>
+
+    <!-- CABEÇALHO DO DOCUMENTO -->
+    <header class="doc-header">
+      <span class="badge-pilar">MÉTODO PROSPERAR IDEIAS • MATERIAL EXECUTIVO</span>
+      <h1 class="doc-title">Blueprint: Os 4 Mega-Prompts do Claude para Estruturar sua Mentoria High Ticket</h1>
+      <p class="doc-subtitle">Como transformar 10+ anos de experiência profissional em uma Mentoria de R$ 6.500 a R$ 12.000 em apenas 1 tarde.</p>
+    </header>
+
+    <!-- CARD 1: CONVITE OFICIAL PARA SEGUIR -->
+    <section class="card-follow">
+      <h3>🔔 Passo Obrigatório: Faça Parte da Nossa Comunidade</h3>
+      <p>Este material foi desenvolvido com a minha experiência de 18 anos de governança corporativa e negócios solo com IA. Para ter acesso aos próximos materiais, lives e análises de bastidores, certifique-se de me seguir no Instagram:</p>
+      <a href="https://www.instagram.com/eu.silvanarosa" target="_blank" class="btn-follow">
+        👉 Seguir @eu.silvanarosa no Instagram
+      </a>
+    </section>
+
+    <!-- BLOCO DE CONTEXTO E FUNDAMENTO -->
+    <section class="intro-block">
+      <h2>Por que 2026 é o fim dos cursos gravados baratos?</h2>
+      <p>O mercado digital passou por uma transformação radical: <strong>informação genérica está disponível de graça</strong> no YouTube e na IA. Especialistas que tentam vender cursos gravados de R$ 197 ou e-books de R$ 29 estão sendo esmagadas pelo custo absurdo dos anúncios e por taxas de abandono superiores a 90%.</p>
+      <p>O cliente executivo, a profissional liberal e a dona de negócio madura não compram mais "aulas". Elas compram <strong>IMPLEMENTAÇÃO, ATALHO e ACOMPANHAMENTO</strong>. Elas querem o seu modelo mental transferido para o negócio delas.</p>
+      <p>Abaixo estão os 4 comandos sequenciais que você deve rodar no <strong>Claude (claude.ai)</strong> para estruturar sua oferta de alto valor.</p>
+    </section>
+
+    <!-- PROMPT 1 -->
+    <article class="prompt-card">
+      <div class="prompt-header">
+        <span class="prompt-tag">ETAPA 01 • MINERAÇÃO</span>
+        <button class="btn-copy" onclick="copiarTexto('prompt1', this)">Copiar Prompt</button>
+      </div>
+      <h2 class="prompt-title">Prompt 1: A Mineração da sua Bagagem Sênior</h2>
+      <p class="prompt-desc">Objetivo: Eliminar a 'cegueira do conhecimento' e extrair dores reais que justificam alto ticket.</p>
+      <div class="code-box" id="prompt1">Atue como uma estrategista sênior de negócios e mentora de posicionamento high ticket.
+Vou te passar a minha trajetória profissional detalhada:
+[INSERIR AQUI: sua formação, cargos corporativos, anos de experiência, problemas complexos que já resolveu e resultados que gerou].
+
+Com base nessa bagagem, faça o seguinte:
+1. Identifique os 3 maiores problemas caros e urgentes que eu já resolvi e que profissionais liberais, empresárias ou executivas pagariam alto para aprender a resolver.
+2. Defina quem é o meu Cliente Ideal de Alto Valor (perfil maduro, com capacidade financeira e pressa de implementação).
+3. Formule 3 propostas de posicionamento executivo que fujam de clichês de internet (nada de 'te ajudo a transformar vidas').
+Responda de forma analítica e direta.</div>
+    </article>
+
+    <!-- PROMPT 2 -->
+    <article class="prompt-card">
+      <div class="prompt-header">
+        <span class="prompt-tag">ETAPA 02 • METODOLOGIA</span>
+        <button class="btn-copy" onclick="copiarTexto('prompt2', this)">Copiar Prompt</button>
+      </div>
+      <h2 class="prompt-title">Prompt 2: A Arquitetura da Metodologia Done-With-You</h2>
+      <p class="prompt-desc">Objetivo: Estruturar 8 semanas de acompanhamento prático focadas em marcos, sem aulas teóricas longas.</p>
+      <div class="code-box" id="prompt2">Com base no problema escolhido e no meu perfil, estruture a minha Mentoria High Ticket em um formato de 8 semanas de acompanhamento prático.
+A mentoria deve ser híbrida: encontros individuais ou em grupo enxuto + suporte de implementação.
+
+Estruture a jornada em 4 fases claras:
+- Fase 1: Diagnóstico e Alinhamento de Rota
+- Fase 2: Construção dos Ativos e Metodologia
+- Fase 3: Execução e Teste de Campo
+- Fase 4: Otimização, Vendas e Escala
+
+Para cada semana, entregue:
+1. O objetivo do encontro (máximo 1h).
+2. O entregável concreto que a mentorada deve concluir na semana.
+3. O modelo mental / framework exclusivo que eu vou transferir para ela.
+Elimine aulas teóricas longas. Foco 100% em marcos de resultado palpável.</div>
+    </article>
+
+    <!-- PROMPT 3 -->
+    <article class="prompt-card">
+      <div class="prompt-header">
+        <span class="prompt-tag">ETAPA 03 • PRECIFICAÇÃO & VALOR</span>
+        <button class="btn-copy" onclick="copiarTexto('prompt3', this)">Copiar Prompt</button>
+      </div>
+      <h2 class="prompt-title">Prompt 3: Mecanismo Único & Precificação (R$ 6.500 a R$ 12.000)</h2>
+      <p class="prompt-desc">Objetivo: Batizar o seu método para torná-lo incomparável e justificar o retorno do cliente.</p>
+      <div class="code-box" id="prompt3">Agora vamos desenhar a precificação e a singularidade da minha mentoria.
+1. Crie um nome forte e memorável para o meu Método (um Mecanismo Único com sigla ou conceito proprietário, similar ao Método TBC ou Método Prosperar).
+2. Justifique a precificação de entrada de R$ 6.500 e a versão avançada de R$ 12.000 detalhando o Retorno Sobre o Investimento (ROI) que a mentorada terá ao aplicar meu método.
+3. Liste 3 bônus de aceleração operacional (templates de IA, planilhas ou agentes prontos) que eliminam 80% do esforço braçal da mentorada.
+4. Escreva a 'Grande Promessa' da mentoria em uma única frase de alto impacto.</div>
+    </article>
+
+    <!-- PROMPT 4 -->
+    <article class="prompt-card">
+      <div class="prompt-header">
+        <span class="prompt-tag">ETAPA 04 • CONVERSÃO</span>
+        <button class="btn-copy" onclick="copiarTexto('prompt4', this)">Copiar Prompt</button>
+      </div>
+      <h2 class="prompt-title">Prompt 4: O Roteiro da Sessão Diagnóstica de 30 Minutos</h2>
+      <p class="prompt-desc">Objetivo: Conduzir uma reunião consultiva que qualifica e fecha mentorias com elegância, sem parecer vendedora chata.</p>
+      <div class="code-box" id="prompt4">Desenvolva o roteiro de uma Sessão Diagnóstica de Negócios de 30 minutos para eu aplicar com potenciais mentoradas que agendarem uma call comigo.
+O roteiro deve seguir a estrutura consultiva:
+1. Conexão e Quebra de Gelo Executivo (2 minutos).
+2. Diagnóstico da Dor Atual: 4 perguntas cirúrgicas para entender onde ela está travada (10 minutos).
+3. Apresentação do Gap: Mostrar por que o caminho atual dela custa caro e gera desgaste (8 minutos).
+4. A Ponte para a Mentoria: Como apresentar o meu método como a solução natural e convidar para a aplicação de R$ 6.500 a R$ 12.000 (8 minutos).
+5. Como desarmar as objeções 'preciso pensar' e 'não tenho tempo' com elegância e postura sênior (2 minutos).</div>
+    </article>
+
+    <!-- CARD DE FEEDBACK: "ME CONTE SE DEU CERTO" -->
+    <section class="card-feedback">
+      <h3>💬 Me conte se deu certo!</h3>
+      <p>Você rodou os prompts no Claude? Qual foi a estrutura de mentoria que ele sugeriu para você? Eu quero saber pessoalmente como foi a sua experiência com este material.</p>
+      <a href="https://ig.me/m/eu.silvanarosa" target="_blank" class="btn-feedback">
+        ✉️ Enviar Direct para Silvana Rosa contando o resultado
+      </a>
+    </section>
+
+    <!-- CARD DE CONVERSÃO PARA SESSÃO DE 1H -->
+    <section class="card-conversion">
+      <span class="tag-conv">OPORTUNIDADE EXCLUSIVA</span>
+      <h2>Quer Desenhar a Sua Mentoria Diretamente Comigo?</h2>
+      <p>Ferramenta sem visão estratégica vira apenas mais uma aba aberta no seu navegador. Se você quer ajuda para validar a sua bagagem, definir o seu ticket e montar a sua esteira de One Person Business com IA, eu libero para você uma <strong>Sessão Estratégica Individual de 1 Hora (100% Gratuita)</strong>.</p>
+      <a href="https://ig.me/m/eu.silvanarosa?text=Ol%C3%A1%20Silvana,%20li%20o%20Blueprint%20e%20quero%20agendar%20minha%20Sess%C3%A3o%20Estrat%C3%A9gica%20de%201h" target="_blank" class="btn-session">
+        📅 Solicitar Minha Sessão Estratégica de 1h
+      </a>
+      <div class="author-sign">
+        <strong>Silvana Rosa</strong> • Mentora de Negócios &amp; IA para One Person Business<br>
+        18 anos de governança corporativa | Fundadora do Método Prosperar Ideias
+      </div>
+    </section>
+
+  </div>
+
+  <script>
+    function copiarTexto(idElemento, botao) {
+      const texto = document.getElementById(idElemento).innerText;
+      navigator.clipboard.writeText(texto).then(() => {
+        const textoOriginal = botao.innerText;
+        botao.innerText = 'Copiado! ✓';
+        botao.classList.add('copied');
+        setTimeout(() => {
+          botao.innerText = textoOriginal;
+          botao.classList.remove('copied');
+        }, 2500);
+      });
+    }
+  </script>
+
+</body>
+</html>
