@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Guia Executivo dos 4 Serviços Intelectuais &amp; Método GROW — Silvana Rosa</title>
+  <style>
+    @page {
+      size: A4 portrait;
+      margin: 0;
+    }
+    * {
+      box-sizing: border-box;
+      -webkit-print-color-adjust: exact !important;
+      print-color-adjust: exact !important;
+      margin: 0;
+      padding: 0;
+    }
+    html, body {
+      width: 210mm;
+      background-color: #ECE1C3;
+      color: #063940;
+      font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif;
+      font-size: 13px;
+      line-height: 1.45;
+    }
+    .page {
+      width: 210mm;
+      height: 297mm;
+      max-height: 297mm;
+      min-height: 297mm;
+      page-break-after: always;
+      page-break-inside: avoid;
+      position: relative;
+      overflow: hidden;
+      padding: 16mm 16mm 14mm 16mm;
+      background: #ECE1C3;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    /* Cantoneiras Técnicas */
+    .corner-tl { position: absolute; top: 8mm; left: 8mm; width: 14px; height: 14px; border-top: 2px solid #C28424; border-left: 2px solid #C28424; opacity: 0.6; }
+    .corner-tr { position: absolute; top: 8mm; right: 8mm; width: 14px; height: 14px; border-top: 2px solid #C28424; border-right: 2px solid #C28424; opacity: 0.6; }
+    .corner-bl { position: absolute; bottom: 8mm; left: 8mm; width: 14px; height: 14px; border-bottom: 2px solid #C28424; border-left: 2px solid #C28424; opacity: 0.6; }
+    .corner-br { position: absolute; bottom: 8mm; right: 8mm; width: 14px; height: 14px; border-bottom: 2px solid #C28424; border-right: 2px solid #C28424; opacity: 0.6; }
+
+    /* Cabeçalho Monospace Técnico */
+    .top-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #D9C8A3;
+      padding-bottom: 8px;
+      font-family: 'Consolas', 'Courier New', monospace;
+      font-size: 10px;
+      letter-spacing: 1px;
+      color: #3E838C;
+      text-transform: uppercase;
+    }
+
+    /* Rodapé Técnico */
+    .footer-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-top: 1px solid #D9C8A3;
+      padding-top: 8px;
+      font-family: 'Consolas', 'Courier New', monospace;
+      font-size: 10px;
+      color: #063940;
+      opacity: 0.7;
+    }
+
+    .cover-container {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 6mm 4mm;
+    }
+    .badge-pill {
+      align-self: flex-start;
+      display: inline-block;
+      padding: 6px 14px;
+      background: #063940;
+      color: #ECE1C3;
+      border-radius: 20px;
+      font-size: 10.5px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+    .cover-title {
+      font-size: 32px;
+      font-weight: 900;
+      line-height: 1.15;
+      color: #063940;
+      margin-bottom: 10px;
+      letter-spacing: -0.5px;
+    }
+    .cover-highlight {
+      display: inline-block;
+      background: linear-gradient(90deg, #C28424 0%, #DFAC57 100%);
+      color: #063940;
+      padding: 4px 12px;
+      border-radius: 6px;
+    }
+    .cover-subtitle {
+      font-size: 15px;
+      font-weight: 500;
+      color: #063940;
+      line-height: 1.5;
+      margin-bottom: 20px;
+      max-width: 600px;
+    }
+
+    .card {
+      background: #FFFFFF;
+      border: 1px solid #D9C8A3;
+      border-radius: 12px;
+      padding: 14px 18px;
+      margin-bottom: 12px;
+    }
+    .card-teal {
+      background: #063940;
+      color: #ECE1C3;
+      border: 1px solid #3E838C;
+    }
+    .card-title {
+      font-size: 15px;
+      font-weight: 800;
+      color: #063940;
+      margin-bottom: 6px;
+    }
+    .card-teal .card-title {
+      color: #DFAC57;
+    }
+    .card-body {
+      font-size: 12.5px;
+      color: #333333;
+      line-height: 1.5;
+    }
+    .card-teal .card-body {
+      color: #FFFFFF;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    table.comp-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 12px 0;
+      background: #FFFFFF;
+      border-radius: 10px;
+      overflow: hidden;
+      border: 1px solid #D9C8A3;
+    }
+    table.comp-table th {
+      background: #063940;
+      color: #ECE1C3;
+      padding: 10px 14px;
+      font-size: 12px;
+      text-align: left;
+    }
+    table.comp-table th.gold {
+      color: #DFAC57;
+    }
+    table.comp-table td {
+      padding: 10px 14px;
+      font-size: 11.5px;
+      border-bottom: 1px solid #EBE1CB;
+      color: #063940;
+    }
+    table.comp-table tr:nth-child(even) td {
+      background: #FAF7F0;
+    }
+
+    .vip-box {
+      background: #063940;
+      border: 2px solid #C28424;
+      border-radius: 12px;
+      padding: 18px;
+      text-align: center;
+      color: #FFFFFF;
+      margin-top: 14px;
+    }
+    .vip-tag {
+      font-size: 10px;
+      font-weight: 800;
+      color: #DFAC57;
+      letter-spacing: 2px;
+      margin-bottom: 6px;
+    }
+    .vip-title {
+      font-size: 18px;
+      font-weight: 900;
+      margin-bottom: 8px;
+      color: #FFFFFF;
+    }
+    .vip-desc {
+      font-size: 12.5px;
+      line-height: 1.5;
+      color: #ECE1C3;
+      max-width: 580px;
+      margin: 0 auto 14px auto;
+    }
+    .vip-btn {
+      display: inline-block;
+      background: linear-gradient(90deg, #C28424 0%, #DFAC57 100%);
+      color: #063940;
+      font-weight: 800;
+      font-size: 13.5px;
+      padding: 10px 24px;
+      border-radius: 8px;
+      text-decoration: none;
+      letter-spacing: 0.5px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- PÁGINA 1: CAPA & VISÃO ESTRATÉGICA DOS 4 SERVIÇOS -->
+  <div class="page">
+    <div class="corner-tl"></div><div class="corner-tr"></div>
+    <div class="corner-bl"></div><div class="corner-br"></div>
+
+    <div class="top-meta">
+      <div>GABARITO HOMOLOGADO // COD: GUIA-4-SERVICOS-2026</div>
+      <div>SILVANA ROSA • ONE PERSON BUSINESS</div>
+    </div>
+
+    <div class="cover-container">
+      <div class="badge-pill">GUIA DEFINITIVO • MODELOS DE ATUAÇÃO</div>
+      <div class="cover-title">
+        MENTORIA, CONSULTORIA,<br>
+        <span class="cover-highlight">ASSESSORIA OU COACHING?</span>
+      </div>
+      <div class="cover-subtitle">
+        O mapa definitivo para sair da armadilha do operacional braçal e construir uma carreira e esteira de mentoria com 90% de margem líquida.
+      </div>
+
+      <div class="card" style="margin-bottom: 14px;">
+        <div class="card-title">O Diagnóstico Consciente da Profissional Sênior</div>
+        <div class="card-body">
+          O maior erro de quem tem mais de 10 anos de mercado é <strong>vender mentoria, cobrar como assessoria e entregar consultoria braçal no operacional</strong>. Se você não delimita claramente a fronteira entre o que você destina e o que o cliente executa, seu negócio vira um "emprego de luxo": sem escala, sem férias e com margens destruídas por refações.
+        </div>
+      </div>
+
+      <div class="grid-2">
+        <div class="card">
+          <div class="card-title" style="color: #A83232;">1. Assessoria (Feito POR você)</div>
+          <div class="card-body">Mão de obra contínua. Opera ferramentas e gera relatórios. Margem de 20% a 30% com alta dependência e estresse.</div>
+        </div>
+        <div class="card">
+          <div class="card-title" style="color: #856404;">2. Consultoria (Feito PARA você)</div>
+          <div class="card-body">Diagnóstico pontual. Entrega planilhas e apresentações no braço. 45h/semana e faturamento que zera nas férias.</div>
+        </div>
+        <div class="card">
+          <div class="card-title" style="color: #383D41;">3. Coaching &amp; Treinamento</div>
+          <div class="card-body">Foco em comportamento e perguntas no presente (sem direcionamento de negócio) ou aulas pontuais para grupos.</div>
+        </div>
+        <div class="card card-teal">
+          <div class="card-title">4. Mentoria High Ticket ✦</div>
+          <div class="card-body">Feito COM você. Transfere visão, audita decisões e encurta a rota com método GROW. Margem de 90% e 10h semanais.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-meta">
+      <div>SILVANA ROSA • @eu.silvanarosa</div>
+      <div>PÁGINA 01 DE 03 • GUIA EXECUTIVO OFICIAL</div>
+    </div>
+  </div>
+
+  <!-- PÁGINA 2: TABELA COMPARATIVA FORENSE & O MÉTODO GROW -->
+  <div class="page">
+    <div class="corner-tl"></div><div class="corner-tr"></div>
+    <div class="corner-bl"></div><div class="corner-br"></div>
+
+    <div class="top-meta">
+      <div>MATRIZ FORENSE DE REMUNERAÇÃO &amp; MÉTODO GROW</div>
+      <div>SILVANA ROSA • ONE PERSON BUSINESS</div>
+    </div>
+
+    <div style="flex: 1; padding: 4mm 2mm;">
+      <h2 style="font-size: 18px; font-weight: 900; margin-bottom: 6px; color: #063940;">
+        Raio-X de Remuneração e Carga Horária
+      </h2>
+
+      <table class="comp-table">
+        <thead>
+          <tr>
+            <th style="width: 20%;">Formato</th>
+            <th style="width: 25%;">O Que Entrega</th>
+            <th style="width: 18%;">Ticket Médio</th>
+            <th style="width: 17%;">Carga Horária</th>
+            <th style="width: 20%;" class="gold">Margem Líquida</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Assessoria</strong></td>
+            <td>Operação e tarefas braçais diárias</td>
+            <td>R$ 1.500 a R$ 3.000</td>
+            <td>50h / semana</td>
+            <td>20% a 30% (mínima)</td>
+          </tr>
+          <tr>
+            <td><strong>Consultoria</strong></td>
+            <td>Relatórios manuais e planilhas</td>
+            <td>R$ 3.500 a R$ 5.000</td>
+            <td>40h a 45h / semana</td>
+            <td>35% a 45% (média)</td>
+          </tr>
+          <tr>
+            <td><strong>Coaching</strong></td>
+            <td>Perguntas e sessões avulsas</td>
+            <td>R$ 2.000 a R$ 4.000</td>
+            <td>25h / semana</td>
+            <td>70% (sem escala)</td>
+          </tr>
+          <tr>
+            <td><strong>Mentoria H.T. ✦</strong></td>
+            <td><strong>Método, Rota e Decisões</strong></td>
+            <td><strong>R$ 6.500 a R$ 12.000</strong></td>
+            <td><strong>8h a 10h / semana</strong></td>
+            <td><strong>88% a 92% (máxima)</strong></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2 style="font-size: 18px; font-weight: 900; margin: 14px 0 6px 0; color: #063940;">
+        A Estrutura de Condução das Sessões (Método GROW)
+      </h2>
+      <p style="font-size: 12px; color: #4B636E; margin-bottom: 10px;">
+        Criado por John Whitmore e aplicado à mentoria de alto ticket para que a mentorada execute e você mantenha a postura de conselheira:
+      </p>
+
+      <div class="grid-2">
+        <div class="card">
+          <div class="card-title">G • GOAL (Objetivo Claro)</div>
+          <div class="card-body">O que a mentorada quer conquistar nos próximos 60 dias? Meta de faturamento, produto empacotado ou rota de saída.</div>
+        </div>
+        <div class="card">
+          <div class="card-title">R • REALITY (Realidade Nua)</div>
+          <div class="card-body">Onde o negócio dela realmente está hoje? Diagnóstico honesto dos gargalos, sem maquiagem técnica.</div>
+        </div>
+        <div class="card card-teal">
+          <div class="card-title">O • OPTIONS (Caminhos Possíveis)</div>
+          <div class="card-body">Quais rotas e estratégias a sua experiência de 10 anos recomenda priorizar? Você aponta o erro invisível.</div>
+        </div>
+        <div class="card card-teal">
+          <div class="card-title">W • WILL (Compromisso de Ação)</div>
+          <div class="card-body">O que ELA vai aplicar e entregar até o próximo encontro, e quando? "Um plano sem prazo é apenas intenção."</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-meta">
+      <div>SILVANA ROSA • @eu.silvanarosa</div>
+      <div>PÁGINA 02 DE 03 • GUIA EXECUTIVO OFICIAL</div>
+    </div>
+  </div>
+
+  <!-- PÁGINA 3: A ROTA DE TRANSIÇÃO EM 3 FASES & CONVITE VIP -->
+  <div class="page">
+    <div class="corner-tl"></div><div class="corner-tr"></div>
+    <div class="corner-bl"></div><div class="corner-br"></div>
+
+    <div class="top-meta">
+      <div>PLANO PRÁTICO DE TRANSIÇÃO // METODOLOGIA SILVANA ROSA</div>
+      <div>SILVANA ROSA • ONE PERSON BUSINESS</div>
+    </div>
+
+    <div style="flex: 1; padding: 4mm 2mm;">
+      <h2 style="font-size: 18px; font-weight: 900; margin-bottom: 6px; color: #063940;">
+        A Rota de Transição Segura em 3 Meses
+      </h2>
+      <p style="font-size: 12.5px; color: #063940; margin-bottom: 10px;">
+        Como migrar do braçal para a mentoria de R$ 6.5k a R$ 10k sem correr riscos de caixa:
+      </p>
+
+      <div class="card" style="border-left: 4px solid #D9C8A3;">
+        <div class="card-title">Fase 1 (Mês 1) — O Colchão de Segurança</div>
+        <div class="card-body">Mantenha seus 2 clientes de consultoria mais lucrativos para garantir o caixa fixo enquanto você empacota seu método proprietário no Notion de bordo e calibra seus prompts de IA.</div>
+      </div>
+
+      <div class="card card-teal" style="border-left: 4px solid #3E838C;">
+        <div class="card-title">Fase 2 (Mês 2) — As 3 Vagas Fundadoras</div>
+        <div class="card-body">Abra 3 vagas da sua Mentoria High Ticket a R$ 5.000 (preço especial fundador). Feche direto pelo Direct usando carrosséis densos e conversas qualificadas, sem precisar de páginas complexas.</div>
+      </div>
+
+      <div class="card" style="border-left: 4px solid #C28424;">
+        <div class="card-title">Fase 3 (Mês 3) — A Virada de Chave Definitiva</div>
+        <div class="card-body">Suba o ticket oficial para R$ 7.500 ou R$ 8.000. Ofereça aos clientes antigos de consultoria a migração para acompanhamento estratégico ou dispense a operação braçal.</div>
+      </div>
+
+      <!-- SUPER BOX VIP DE CONVITE -->
+      <div class="vip-box">
+        <div class="vip-tag">✦ ACESSO DIRETO • SESSÃO ESTRATÉGICA INDIVIDUAL</div>
+        <div class="vip-title">QUER DESENHAR A SUA MENTORIA DE R$ 5K A R$ 10K COM SILVANA ROSA?</div>
+        <p class="vip-desc">
+          Se você tem mais de 10 anos de mercado, clientes consolidados e não quer passar meses errando sozinha tentando empacotar seu conhecimento, eu posso analisar o seu modelo de negócio pessoalmente. Na <strong>Sessão Estratégica Individual (1 hora comigo)</strong>, nós vamos auditar seus gargalos, desenhar seu Notion de bordo enxuto e traçar a rota exata para suas primeiras vendas de alto valor com 90% de margem.
+        </p>
+        <a href="https://sessao.silvanarosa.com.br" class="vip-btn" target="_blank">
+          👉 AGENDAR 1H COMIGO • SESSÃO ESTRATÉGICA INDIVIDUAL
+        </a>
+        <div style="font-size: 11px; margin-top: 9px; color: #DFAC57; font-weight: 600;">
+          Link oficial: <strong>sessao.silvanarosa.com.br</strong> • 1 Hora Individual com Silvana Rosa • Vagas Limitadas
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-meta">
+      <div>SILVANA ROSA • @eu.silvanarosa</div>
+      <div>PÁGINA 03 DE 03 • GUIA EXECUTIVO OFICIAL</div>
+    </div>
+  </div>
+
+</body>
+</html>
