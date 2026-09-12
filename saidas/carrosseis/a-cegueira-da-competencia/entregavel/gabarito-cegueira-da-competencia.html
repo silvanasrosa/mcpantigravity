@@ -1,0 +1,805 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Gabarito Oficial: Manual de Transição para Mentoria High Ticket — Silvana Rosa</title>
+  <style>
+    @page {
+      size: A4 portrait;
+      margin: 0;
+    }
+    * {
+      box-sizing: border-box;
+      -webkit-print-color-adjust: exact !important;
+      print-color-adjust: exact !important;
+      margin: 0;
+      padding: 0;
+    }
+    html, body {
+      width: 210mm;
+      background-color: #050B0E;
+      color: #E6EDF3;
+      font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif;
+      font-size: 13px;
+      line-height: 1.45;
+    }
+    .page {
+      width: 210mm;
+      height: 297mm;
+      max-height: 297mm;
+      min-height: 297mm;
+      page-break-after: always;
+      page-break-inside: avoid;
+      position: relative;
+      overflow: hidden;
+      padding: 16mm 16mm 14mm 16mm;
+      background: radial-gradient(circle at 85% 12%, #08282E 0%, #06151A 50%, #040A0D 100%);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    /* Cantoneiras Técnicas */
+    .corner-tl { position: absolute; top: 8mm; left: 8mm; width: 14px; height: 14px; border-top: 2px solid #DDA853; border-left: 2px solid #DDA853; opacity: 0.6; }
+    .corner-tr { position: absolute; top: 8mm; right: 8mm; width: 14px; height: 14px; border-top: 2px solid #DDA853; border-right: 2px solid #DDA853; opacity: 0.6; }
+    .corner-bl { position: absolute; bottom: 8mm; left: 8mm; width: 14px; height: 14px; border-bottom: 2px solid #DDA853; border-left: 2px solid #DDA853; opacity: 0.6; }
+    .corner-br { position: absolute; bottom: 8mm; right: 8mm; width: 14px; height: 14px; border-bottom: 2px solid #DDA853; border-right: 2px solid #DDA853; opacity: 0.6; }
+
+    /* Cabeçalho Monospace Técnico */
+    .top-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-family: 'SF Mono', Consolas, 'Liberation Mono', Menlo, monospace;
+      font-size: 9.5px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: #8EBDB6;
+      border-bottom: 1px solid rgba(62, 131, 140, 0.25);
+      padding-bottom: 8px;
+      margin-bottom: 12px;
+    }
+    .badge-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(221, 168, 83, 0.12);
+      border: 1px solid rgba(221, 168, 83, 0.4);
+      padding: 3px 9px;
+      border-radius: 12px;
+      color: #F3D293;
+      font-weight: 700;
+    }
+    .badge-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #DDA853;
+      box-shadow: 0 0 6px #DDA853;
+    }
+
+    /* Rodapé Técnico */
+    .footer-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-family: 'SF Mono', Consolas, monospace;
+      font-size: 9px;
+      letter-spacing: 1px;
+      color: #6C8B90;
+      border-top: 1px solid rgba(62, 131, 140, 0.2);
+      padding-top: 8px;
+      margin-top: 10px;
+    }
+
+    /* Tipografia de Destaque */
+    .gold { color: #DDA853; }
+    .gold-light { color: #F3D293; }
+    .tiffany { color: #48CAE4; }
+    .tiffany-light { color: #8EBDB6; }
+    .white { color: #FFFFFF; }
+    .muted { color: #94A3B8; }
+
+    h1.hero-title {
+      font-family: 'Segoe UI', 'Arial Black', Impact, sans-serif;
+      font-size: 38px;
+      font-weight: 900;
+      line-height: 1.08;
+      letter-spacing: -0.5px;
+      color: #FFFFFF;
+      margin-bottom: 8px;
+      text-transform: uppercase;
+    }
+    h2.section-title {
+      font-family: 'Segoe UI', 'Arial Black', Impact, sans-serif;
+      font-size: 24px;
+      font-weight: 900;
+      line-height: 1.15;
+      letter-spacing: -0.3px;
+      color: #FFFFFF;
+      margin-bottom: 4px;
+    }
+    p.section-sub {
+      font-size: 13px;
+      color: #CBD5E1;
+      margin-bottom: 14px;
+      line-height: 1.4;
+    }
+
+    /* Caixas & Containers */
+    .card-dark {
+      background: rgba(9, 30, 36, 0.65);
+      border: 1px solid rgba(62, 131, 140, 0.35);
+      border-radius: 12px;
+      padding: 14px;
+    }
+    .card-gold {
+      background: rgba(221, 168, 83, 0.08);
+      border: 1px solid rgba(221, 168, 83, 0.35);
+      border-radius: 12px;
+      padding: 14px;
+    }
+
+    /* Grid de Parâmetros */
+    .grid-params {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      margin: 14px 0;
+    }
+    .param-box {
+      background: rgba(6, 32, 38, 0.7);
+      border: 1px solid rgba(62, 131, 140, 0.3);
+      border-radius: 10px;
+      padding: 10px 12px;
+    }
+    .param-label {
+      font-family: 'SF Mono', Consolas, monospace;
+      font-size: 9px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: #8EBDB6;
+      margin-bottom: 4px;
+    }
+    .param-value {
+      font-size: 14px;
+      font-weight: 800;
+      color: #FFFFFF;
+    }
+
+    /* Tabela Comparativa */
+    .comp-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-bottom: 14px;
+    }
+    .comp-card {
+      border-radius: 10px;
+      padding: 12px 14px;
+    }
+    .comp-card.good {
+      background: rgba(9, 44, 48, 0.55);
+      border: 1.5px solid rgba(62, 131, 140, 0.6);
+    }
+    .comp-card.bad {
+      background: rgba(45, 14, 18, 0.45);
+      border: 1.5px solid rgba(239, 68, 68, 0.4);
+    }
+    .comp-header {
+      font-family: 'SF Mono', Consolas, monospace;
+      font-size: 10.5px;
+      font-weight: 800;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+      padding-bottom: 6px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .comp-list {
+      list-style: none;
+    }
+    .comp-list li {
+      position: relative;
+      padding-left: 16px;
+      margin-bottom: 6px;
+      font-size: 11.5px;
+      line-height: 1.35;
+      color: #E2E8F0;
+    }
+    .comp-list li::before {
+      content: '•';
+      position: absolute;
+      left: 0;
+      font-weight: bold;
+    }
+    .good .comp-list li::before { color: #48CAE4; }
+    .bad .comp-list li::before { color: #EF4444; }
+
+    /* Tabela de Auditoria */
+    table.audit-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 11px;
+      background: rgba(5, 24, 30, 0.6);
+      border-radius: 8px;
+      overflow: hidden;
+      border: 1px solid rgba(62, 131, 140, 0.25);
+    }
+    table.audit-table th {
+      background: rgba(62, 131, 140, 0.25);
+      color: #F3D293;
+      font-family: 'SF Mono', Consolas, monospace;
+      font-size: 9.5px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      padding: 7px 10px;
+      text-align: left;
+    }
+    table.audit-table td {
+      padding: 7px 10px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      vertical-align: top;
+      line-height: 1.35;
+    }
+
+    /* Checklist */
+    .chk-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+    .chk-group {
+      background: rgba(6, 26, 32, 0.6);
+      border: 1px solid rgba(62, 131, 140, 0.3);
+      border-radius: 10px;
+      padding: 10px 12px;
+    }
+    .chk-title {
+      font-family: 'SF Mono', Consolas, monospace;
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 1px;
+      color: #DDA853;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+      padding-bottom: 4px;
+      border-bottom: 1px solid rgba(221, 168, 83, 0.2);
+    }
+    .chk-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      margin-bottom: 5px;
+      font-size: 11px;
+      color: #E2E8F0;
+      line-height: 1.3;
+    }
+    .chk-box {
+      width: 13px;
+      height: 13px;
+      border: 1.5px solid #8EBDB6;
+      border-radius: 3px;
+      flex-shrink: 0;
+      margin-top: 1px;
+      background: rgba(62, 131, 140, 0.15);
+    }
+
+    /* Super Caixa VIP de Sessão Estratégica */
+    .vip-box {
+      background: linear-gradient(135deg, rgba(8, 38, 44, 0.95) 0%, rgba(5, 20, 24, 0.95) 100%);
+      border: 2px solid #DDA853;
+      box-shadow: 0 0 25px rgba(221, 168, 83, 0.18), inset 0 0 15px rgba(62, 131, 140, 0.12);
+      border-radius: 14px;
+      padding: 16px 18px;
+      position: relative;
+    }
+    .vip-tag {
+      display: inline-block;
+      background: linear-gradient(90deg, #C28424, #DDA853, #F3D293);
+      color: #041417;
+      font-family: 'SF Mono', Consolas, monospace;
+      font-size: 10px;
+      font-weight: 900;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      padding: 3px 10px;
+      border-radius: 12px;
+      margin-bottom: 8px;
+    }
+    .vip-title {
+      font-family: 'Segoe UI', 'Arial Black', Impact, sans-serif;
+      font-size: 20px;
+      font-weight: 900;
+      color: #FFFFFF;
+      line-height: 1.2;
+      margin-bottom: 6px;
+    }
+    .vip-desc {
+      font-size: 12px;
+      color: #CBD5E1;
+      line-height: 1.45;
+      margin-bottom: 12px;
+    }
+    .vip-btn {
+      display: block;
+      background: linear-gradient(90deg, #DDA853, #F3D293);
+      color: #04161A !important;
+      font-family: 'Segoe UI', Arial, sans-serif;
+      font-size: 13.5px;
+      font-weight: 900;
+      letter-spacing: 0.5px;
+      text-align: center;
+      padding: 10px 16px;
+      border-radius: 8px;
+      text-decoration: none !important;
+      box-shadow: 0 4px 14px rgba(221, 168, 83, 0.35);
+      border: 1px solid #FFF1C5;
+    }
+    .vip-url-sub {
+      text-align: center;
+      font-family: 'SF Mono', Consolas, monospace;
+      font-size: 10px;
+      color: #8EBDB6;
+      margin-top: 6px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===================================================================== -->
+  <!-- PÁGINA 1: CAPA EDITORIAL & METADADOS OFICIAIS -->
+  <!-- ===================================================================== -->
+  <div class="page">
+    <div class="corner-tl"></div><div class="corner-tr"></div>
+    <div class="corner-bl"></div><div class="corner-br"></div>
+
+    <div>
+      <div class="top-meta">
+        <div class="badge-pill"><span class="badge-dot"></span> GABARITO OFICIAL • MANUAL ESTRATÉGICO DE TRANSIÇÃO</div>
+        <div>SILVANA ROSA // BLUEPRINT #05</div>
+      </div>
+
+      <div style="margin-top: 14px; margin-bottom: 12px;">
+        <span style="font-family: 'SF Mono', Consolas, monospace; font-size: 11px; letter-spacing: 2px; color: #48CAE4; text-transform: uppercase; font-weight: 800;">
+          ONE PERSON BUSINESS • MENTORIA HIGH TICKET
+        </span>
+      </div>
+
+      <h1 class="hero-title">
+        A CEGUEIRA DA<br>
+        <span class="gold">COMPETÊNCIA</span>
+      </h1>
+
+      <div style="font-size: 17px; font-weight: 800; color: #F3D293; margin-bottom: 12px; line-height: 1.3;">
+        COMO EMPACOTAR 10+ ANOS DE EXPERIÊNCIA EM UMA MENTORIA HIGH TICKET DE R$ 5.000 A R$ 10.000 (EM 4 SEMANAS).
+      </div>
+
+      <div class="card-dark" style="border-left: 4px solid #DDA853; margin-bottom: 14px;">
+        <p style="font-size: 13.5px; color: #E2E8F0; line-height: 1.5;">
+          O método definitivo para destravar profissionais sêniores e especialistas que sofrem da armadilha da hiperqualificação, eliminar de vez a sobrecarga de cursos gravados com dezenas de aulas e fechar mentorias individuais de alto valor no Direct com total autoridade e segurança técnica.
+        </p>
+      </div>
+
+      <!-- Grade dos 6 Parâmetros Técnicos -->
+      <div class="grid-params">
+        <div class="param-box">
+          <div class="param-label">Formato Recomendado</div>
+          <div class="param-value">4 Sessões + Notion</div>
+          <div style="font-size: 10px; color: #94A3B8; margin-top: 2px;">Sem aulas gravadas infinitas</div>
+        </div>
+        <div class="param-box">
+          <div class="param-label">Ticket de Validação</div>
+          <div class="param-value gold">R$ 5.000 a R$ 10.000</div>
+          <div style="font-size: 10px; color: #94A3B8; margin-top: 2px;">Margem líquida de 90%+</div>
+        </div>
+        <div class="param-box">
+          <div class="param-label">Prazo de Transição</div>
+          <div class="param-value">30 Dias para Venda</div>
+          <div style="font-size: 10px; color: #94A3B8; margin-top: 2px;">Método enxuto de 4 fases</div>
+        </div>
+        <div class="param-box">
+          <div class="param-label">Funil de Conversão</div>
+          <div class="param-value">Direct 1 a 1 Consultivo</div>
+          <div style="font-size: 10px; color: #94A3B8; margin-top: 2px;">Sem lives ou pitch agressivo</div>
+        </div>
+        <div class="param-box">
+          <div class="param-label">Perfil de Aluna</div>
+          <div class="param-value">8 a 15+ Anos de Carreira</div>
+          <div style="font-size: 10px; color: #94A3B8; margin-top: 2px;">Com bagagem e dor latente</div>
+        </div>
+        <div class="param-box">
+          <div class="param-label">Próximo Passo VIP</div>
+          <div class="param-value tiffany">Sessão Estratégica</div>
+          <div style="font-size: 10px; color: #94A3B8; margin-top: 2px;">sessao.silvanarosa.com.br</div>
+        </div>
+      </div>
+
+      <!-- Resumo Estratégico da Tese -->
+      <div class="card-gold" style="margin-top: 10px;">
+        <div style="font-family: 'SF Mono', Consolas, monospace; font-size: 10.5px; font-weight: 800; color: #DDA853; text-transform: uppercase; margin-bottom: 4px;">
+          ✦ A TESE CENTRAL DESTE GABARITO
+        </div>
+        <p style="font-size: 12px; color: #F1F5F9; line-height: 1.45;">
+          "O mercado digital não premia quem tem mais certificados na parede. O mercado premia quem tem a capacidade cirúrgica de diagnosticar um problema caro e conduzir a cliente pela rota mais curta e segura. O que para você parece óbvio e banal é exatamente o que a sua aluna pagará R$ 5.000 para aprender."
+        </p>
+      </div>
+    </div>
+
+    <div class="footer-meta">
+      <div>DIREÇÃO ESTRATÉGICA: <strong>Silvana Rosa</strong> • @eu.silvanarosa</div>
+      <div>GABARITO HOMOLOGADO PARA OPERAÇÕES 2026 // PÁGINA 01 DE 05</div>
+    </div>
+  </div>
+
+  <!-- ===================================================================== -->
+  <!-- PÁGINA 2: 01. DIAGNÓSTICO FORENSE DA CEGUEIRA DA COMPETÊNCIA -->
+  <!-- ===================================================================== -->
+  <div class="page">
+    <div class="corner-tl"></div><div class="corner-tr"></div>
+    <div class="corner-bl"></div><div class="corner-br"></div>
+
+    <div>
+      <div class="top-meta">
+        <div>01. DIAGNÓSTICO FORENSE</div>
+        <div>DOC: DIAG-CEG-01 // SILVANA ROSA</div>
+      </div>
+
+      <h2 class="section-title">O Teste da Cegueira da Competência</h2>
+      <p class="section-sub">
+        Por que quanto mais você sabe, mais acha que seu conhecimento é comum e menos coragem tem de cobrar alto ticket.
+      </p>
+
+      <!-- Stat Highlight -->
+      <div class="card-gold" style="display: flex; gap: 14px; align-items: center; margin-bottom: 14px; padding: 12px 14px;">
+        <div style="font-size: 28px; font-weight: 900; color: #DDA853; font-family: 'Segoe UI', Impact, sans-serif; line-height: 1;">+84%</div>
+        <div style="font-size: 11.5px; color: #E2E8F0; line-height: 1.4;">
+          <strong>Paralisia por Excesso de Estudo:</strong> Pesquisas com especialistas seniores mostram que 84% acumulam de 2 a 4 formações desnecessárias antes de abrir vagas de mentoria, acreditando falsamente que "ainda falta algo".
+        </div>
+      </div>
+
+      <!-- Comparativo Lado a Lado -->
+      <div class="comp-grid">
+        <div class="comp-card good">
+          <div class="comp-header" style="color: #48CAE4;">
+            <span>✔</span> MENTORA HIGH TICKET (MÉTODO SILVANA ROSA)
+          </div>
+          <ul class="comp-list">
+            <li><strong>Foco Cirúrgico:</strong> Resolve UM gargalo financeiro ou operacional crítico em 30 a 45 dias.</li>
+            <li><strong>Entrega Enxuta:</strong> 1 Notion de bordo inteligente + 4 encontros de Zoom de 60 minutos.</li>
+            <li><strong>Precificação por Valor:</strong> Cobra R$ 5k a R$ 10k baseada no custo do erro evitado.</li>
+            <li><strong>Rotina Sustentável:</strong> Atende 4 a 6 mentoradas ativas dedicando apenas 5h semanais.</li>
+            <li><strong>Transformação Real:</strong> Aluna executa as tarefas sem confusão e gera depoimentos fortes.</li>
+          </ul>
+        </div>
+
+        <div class="comp-card bad">
+          <div class="comp-header" style="color: #EF4444;">
+            <span>✖</span> PROFESSORA TRADICIONAL (OVERDELIVERY TÓXICO)
+          </div>
+          <ul class="comp-list">
+            <li><strong>Enciclopédia Ambulante:</strong> Tenta ensinar toda a carreira de 15 anos em um único curso.</li>
+            <li><strong>Sobrecarga Brutal:</strong> Grava 40 aulas longas que 92% das alunas abandonam na metade.</li>
+            <li><strong>Preço Aviltado:</strong> Cobra R$ 497 a R$ 997 e fica dependente de lançamentos exaustivos.</li>
+            <li><strong>Suporte sem Fim:</strong> Responde dúvidas dispersas no WhatsApp à meia-noite sem método.</li>
+            <li><strong>Frustração Mútua:</strong> A aluna se sente culpada por não assistir às aulas e desiste.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Tabela de Auditoria de Parâmetros -->
+      <div style="margin-top: 4px;">
+        <div style="font-family: 'SF Mono', Consolas, monospace; font-size: 10px; font-weight: 800; color: #8EBDB6; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 6px;">
+          MATRIZ DE AUDITORIA OPERACIONAL
+        </div>
+        <table class="audit-table">
+          <thead>
+            <tr>
+              <th style="width: 25%;">Dimensão</th>
+              <th style="width: 37%;">Modo Tradicional (Esgotamento)</th>
+              <th style="width: 38%;">Modo High Ticket (Silvana Rosa)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Objetivo Principal</strong></td>
+              <td>Passar informação e teoria exaustiva.</td>
+              <td>Destravar o resultado comercial com precisão.</td>
+            </tr>
+            <tr>
+              <td><strong>Métrica de Sucesso</strong></td>
+              <td>Horas de vídeo gravado e tamanho do material.</td>
+              <td>Velocidade com que a cliente implementa e lucra.</td>
+            </tr>
+            <tr>
+              <td><strong>Segurança Psicológica</strong></td>
+              <td>Depende de saber todas as respostas de improviso.</td>
+              <td>Fundamentada em um processo estruturado no Notion.</td>
+            </tr>
+            <tr>
+              <td><strong>Retorno por Aluna</strong></td>
+              <td>Baixo lucro, alto cancelamento e cansaço.</td>
+              <td>R$ 5.000 a R$ 10.000 por aluna com margem de 90%+.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="footer-meta">
+      <div>SILVANA ROSA • @eu.silvanarosa</div>
+      <div>GABARITO HOMOLOGADO // PÁGINA 02 DE 05</div>
+    </div>
+  </div>
+
+  <!-- ===================================================================== -->
+  <!-- PÁGINA 3: 02. ARQUITETURA DO PRODUTO: OS 4 ENTREGÁVEIS ENXUTOS -->
+  <!-- ===================================================================== -->
+  <div class="page">
+    <div class="corner-tl"></div><div class="corner-tr"></div>
+    <div class="corner-bl"></div><div class="corner-br"></div>
+
+    <div>
+      <div class="top-meta">
+        <div>02. ARQUITETURA DO PRODUTO</div>
+        <div>DOC: PROD-ENT-02 // SILVANA ROSA</div>
+      </div>
+
+      <h2 class="section-title">Os 4 Entregáveis da Mentoria Enxuta</h2>
+      <p class="section-sub">
+        Você não precisa de plataforma complexa, estúdio ou 50 PDFs. A mentoria de alto valor se apoia em 4 pilares:
+      </p>
+
+      <!-- Grade 2x2 dos 4 Entregáveis -->
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 12px;">
+        <div class="card-dark" style="border-top: 3px solid #DDA853;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+            <div style="font-family: 'SF Mono', monospace; font-size: 11px; font-weight: 900; color: #DDA853;">01. NOTION DE BORDO</div>
+            <span style="font-size: 10px; background: rgba(221,168,83,0.15); color: #F3D293; padding: 2px 6px; border-radius: 4px; font-weight: 700;">HUB CENTRAL</span>
+          </div>
+          <p style="font-size: 11.5px; color: #E2E8F0; line-height: 1.4;">
+            O cockpit compartilhado entre você e a mentorada. Contém o Raio-X do negócio, a linha do tempo das 4 semanas, os planos de ação e as entregas validadas. Acaba com PDFs perdidos no e-mail e confere uma experiência ultra-profissional.
+          </p>
+        </div>
+
+        <div class="card-dark" style="border-top: 3px solid #48CAE4;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+            <div style="font-family: 'SF Mono', monospace; font-size: 11px; font-weight: 900; color: #48CAE4;">02. 4 ENCONTROS NO ZOOM</div>
+            <span style="font-size: 10px; background: rgba(72,202,228,0.15); color: #8EBDB6; padding: 2px 6px; border-radius: 4px; font-weight: 700;">60 MIN CADA</span>
+          </div>
+          <p style="font-size: 11.5px; color: #E2E8F0; line-height: 1.4;">
+            Sessões 1-a-1 com pauta fechada e objetivo único:
+            <br>• <strong>Semana 1:</strong> Diagnóstico &amp; Raio-X dos Gargalos.
+            <br>• <strong>Semana 2:</strong> Desenho da Metodologia &amp; Oferta.
+            <br>• <strong>Semana 3:</strong> Precificação &amp; Roteiro no Direct.
+            <br>• <strong>Semana 4:</strong> Rota de Tração &amp; Próximos 90 Dias.
+          </p>
+        </div>
+
+        <div class="card-dark" style="border-top: 3px solid #8EBDB6;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+            <div style="font-family: 'SF Mono', monospace; font-size: 11px; font-weight: 900; color: #8EBDB6;">03. FRAMEWORKS PRONTOS</div>
+            <span style="font-size: 10px; background: rgba(142,189,182,0.15); color: #FFFFFF; padding: 2px 6px; border-radius: 4px; font-weight: 700;">PLUG &amp; PLAY</span>
+          </div>
+          <p style="font-size: 11.5px; color: #E2E8F0; line-height: 1.4;">
+            Modelos pré-estruturados para ela não começar do zero: planilhas automáticas de precificação, roteiros de abordagem para Direct, checklists operacionais e templates de propostas comerciais de alto padrão.
+          </p>
+        </div>
+
+        <div class="card-dark" style="border-top: 3px solid #F3D293;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+            <div style="font-family: 'SF Mono', monospace; font-size: 11px; font-weight: 900; color: #F3D293;">04. WHATSAPP VIP (SEG A SEX)</div>
+            <span style="font-size: 10px; background: rgba(243,210,147,0.15); color: #DDA853; padding: 2px 6px; border-radius: 4px; font-weight: 700;">ASSÍNCRONO</span>
+          </div>
+          <p style="font-size: 11.5px; color: #E2E8F0; line-height: 1.4;">
+            Canal direto para destravar decisões rápidas durante a execução semanal. Regra clara: áudios de até 3 minutos respondidos em horário comercial. Sem plantão noturno ou reuniões fora da agenda.
+          </p>
+        </div>
+      </div>
+
+      <!-- Alerta da Regra de Ouro -->
+      <div class="card-gold" style="border-left: 4px solid #DDA853; margin-top: 6px;">
+        <div style="font-family: 'SF Mono', monospace; font-size: 10.5px; font-weight: 800; color: #DDA853; text-transform: uppercase; margin-bottom: 4px;">
+          ⚠️ A REGRA DE OURO DA ENTREGA HIGH TICKET
+        </div>
+        <p style="font-size: 12px; color: #FFFFFF; line-height: 1.45;">
+          "Mentoria não é sobre encher a sua aluna de tarefas. É sobre <strong>tirar o peso das costas dela</strong>. Se a sua entrega der preguiça ou parecer lição de casa de colégio, você estruturou errado. Ela não paga pelo seu esforço — ela paga pela rota desobstruída até a meta."
+        </p>
+      </div>
+    </div>
+
+    <div class="footer-meta">
+      <div>SILVANA ROSA • @eu.silvanarosa</div>
+      <div>GABARITO HOMOLOGADO // PÁGINA 03 DE 05</div>
+    </div>
+  </div>
+
+  <!-- ===================================================================== -->
+  <!-- PÁGINA 4: 03. A ANATOMIA DA VENDA NO DIRECT & PRECIFICAÇÃO -->
+  <!-- ===================================================================== -->
+  <div class="page">
+    <div class="corner-tl"></div><div class="corner-tr"></div>
+    <div class="corner-bl"></div><div class="corner-br"></div>
+
+    <div>
+      <div class="top-meta">
+        <div>03. CONVERSÃO E PRECIFICAÇÃO</div>
+        <div>DOC: FUNIL-TICKET-03 // SILVANA ROSA</div>
+      </div>
+
+      <h2 class="section-title">O Roteiro de 4 Passos no Direct sem Pitch Chato</h2>
+      <p class="section-sub">
+        Como conduzir seguidoras e contatos para a sua mentoria de R$ 5.000 em uma conversa natural de igual para igual.
+      </p>
+
+      <!-- Fluxo das 4 Fases de Venda -->
+      <div style="display: flex; flex-direction: column; gap: 8px; margin-bottom: 12px;">
+        <div style="background: rgba(6, 28, 34, 0.7); border: 1px solid rgba(62, 131, 140, 0.35); border-radius: 8px; padding: 8px 12px;">
+          <div style="display: flex; justify-content: space-between; margin-bottom: 3px;">
+            <span style="font-family: 'SF Mono', monospace; font-size: 10px; font-weight: 800; color: #DDA853;">PASSO 1: GANCHO POR CONTEXTO</span>
+            <span style="font-size: 9.5px; color: #8EBDB6;">Início Natural</span>
+          </div>
+          <p style="font-size: 11px; color: #CBD5E1; line-height: 1.35;">
+            Comece a partir de um story, enquete ou do download deste gabarito. Nunca mande mensagem fria vendendo logo de cara.
+            <br><em class="gold-light">Exemplo: "Vi que você comentou sobre a dificuldade de precificar serviços... hoje você atende 100% no braço ou já tem uma oferta estruturada?"</em>
+          </p>
+        </div>
+
+        <div style="background: rgba(6, 28, 34, 0.7); border: 1px solid rgba(62, 131, 140, 0.35); border-radius: 8px; padding: 8px 12px;">
+          <div style="display: flex; justify-content: space-between; margin-bottom: 3px;">
+            <span style="font-family: 'SF Mono', monospace; font-size: 10px; font-weight: 800; color: #DDA853;">PASSO 2: DIAGNÓSTICO DO GARGALO</span>
+            <span style="font-size: 9.5px; color: #8EBDB6;">Identificação da Dor</span>
+          </div>
+          <p style="font-size: 11px; color: #CBD5E1; line-height: 1.35;">
+            Faça a pergunta-chave que faz a prospect enxergar quanto dinheiro ela perde todo mês por continuar desestruturada.
+            <br><em class="gold-light">Exemplo: "E o que tem te impedido de empacotar esse seu conhecimento em uma mentoria individual de R$ 5k?"</em>
+          </p>
+        </div>
+
+        <div style="background: rgba(6, 28, 34, 0.7); border: 1px solid rgba(62, 131, 140, 0.35); border-radius: 8px; padding: 8px 12px;">
+          <div style="display: flex; justify-content: space-between; margin-bottom: 3px;">
+            <span style="font-family: 'SF Mono', monospace; font-size: 10px; font-weight: 800; color: #DDA853;">PASSO 3: A PERSPECTIVA CIRÚRGICA</span>
+            <span style="font-size: 9.5px; color: #8EBDB6;">Demonstração de Autoridade</span>
+          </div>
+          <p style="font-size: 11px; color: #CBD5E1; line-height: 1.35;">
+            Aponte o erro clássico que ela está cometendo em 2 frases simples, provando que você domina exatamente a rota de escape.
+            <br><em class="gold-light">Exemplo: "Você está tentando montar um curso com 30 aulas. O segredo é fazer o oposto: um Notion de 4 fases e 4 sessões."</em>
+          </p>
+        </div>
+
+        <div style="background: rgba(6, 28, 34, 0.7); border: 1px solid rgba(62, 131, 140, 0.35); border-radius: 8px; padding: 8px 12px;">
+          <div style="display: flex; justify-content: space-between; margin-bottom: 3px;">
+            <span style="font-family: 'SF Mono', monospace; font-size: 10px; font-weight: 800; color: #48CAE4;">PASSO 4: O CONVITE ELEGANTE PARA APLICAÇÃO</span>
+            <span style="font-size: 9.5px; color: #DDA853;">Fechamento Suave</span>
+          </div>
+          <p style="font-size: 11px; color: #CBD5E1; line-height: 1.35;">
+            Convide com exclusividade, mostrando que as vagas são limitadas e exigem alinhamento mútuo.
+            <br><em class="tiffany">Exemplo: "Eu abri 2 vagas nesta quinzena para acompanhar profissionais com o seu perfil. Se quiser que eu olhe seu caso, te mando o link da sessão."</em>
+          </p>
+        </div>
+      </div>
+
+      <!-- Tabela de Precificação Estratégica -->
+      <div style="margin-top: 4px;">
+        <div style="font-family: 'SF Mono', Consolas, monospace; font-size: 10px; font-weight: 800; color: #F3D293; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 6px;">
+          TABELA OFICIAL DE PRECIFICAÇÃO HIGH TICKET
+        </div>
+        <table class="audit-table">
+          <thead>
+            <tr>
+              <th>Nível</th>
+              <th>Investimento</th>
+              <th>Objetivo Estratégico</th>
+              <th>Capacidade Mensal</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Nível 1 • Validação</strong></td>
+              <td class="gold" style="font-weight: 800;">R$ 3.500</td>
+              <td>Primeiras 3 clientes para colher depoimentos e afinar o Notion.</td>
+              <td>3 a 4 alunas</td>
+            </tr>
+            <tr>
+              <td><strong>Nível 2 • Padrão High Ticket</strong></td>
+              <td class="gold" style="font-weight: 800;">R$ 5.000 a R$ 7.000</td>
+              <td>Ticket regular One Person Business. Excelente margem e autoridade.</td>
+              <td>4 a 6 alunas</td>
+            </tr>
+            <tr>
+              <td><strong>Nível 3 • Individual VIP</strong></td>
+              <td class="gold" style="font-weight: 800;">R$ 10.000 a R$ 12.000</td>
+              <td>Mentoria executiva individual estendida com análise de processos.</td>
+              <td>1 a 2 alunas</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="footer-meta">
+      <div>SILVANA ROSA • @eu.silvanarosa</div>
+      <div>GABARITO HOMOLOGADO // PÁGINA 04 DE 05</div>
+    </div>
+  </div>
+
+  <!-- ===================================================================== -->
+  <!-- PÁGINA 5: 04. CHECKLIST EXECUTIVO & CONVITE VIP PARA SESSÃO ESTRATÉGICA -->
+  <!-- ===================================================================== -->
+  <div class="page">
+    <div class="corner-tl"></div><div class="corner-tr"></div>
+    <div class="corner-bl"></div><div class="corner-br"></div>
+
+    <div>
+      <div class="top-meta">
+        <div>04. AUDITORIA &amp; PRÓXIMO PASSO</div>
+        <div>DOC: VIP-APROV-04 // SILVANA ROSA</div>
+      </div>
+
+      <h2 class="section-title">Gabarito Executivo de Implementação</h2>
+      <p class="section-sub">
+        Audite a estrutura da sua mentoria contra estes 15 pontos antes de abrir as primeiras vagas oficiais:
+      </p>
+
+      <!-- Checklist 4 Quadrantes -->
+      <div class="chk-grid">
+        <div class="chk-group">
+          <div class="chk-title">🧠 Postura &amp; Mentalidade</div>
+          <div class="chk-item"><div class="chk-box"></div> Superou o medo de precisar saber todas as respostas.</div>
+          <div class="chk-item"><div class="chk-box"></div> Entendeu que a aluna paga pela rota, não por aulas gravadas.</div>
+          <div class="chk-item"><div class="chk-box"></div> Precifica pelo prejuízo que poupa da aluna (R$ 30k+).</div>
+          <div class="chk-item"><div class="chk-box"></div> Abandonou o vício de buscar mais um diploma teórico.</div>
+        </div>
+
+        <div class="chk-group">
+          <div class="chk-title">📦 Produto &amp; Notion</div>
+          <div class="chk-item"><div class="chk-box"></div> Criou o template do Notion de bordo de 4 semanas.</div>
+          <div class="chk-item"><div class="chk-box"></div> Definiu a pauta fechada dos 4 encontros de Zoom.</div>
+          <div class="chk-item"><div class="chk-box"></div> Selecionou 3 frameworks copie-e-cole essenciais.</div>
+          <div class="chk-item"><div class="chk-box"></div> Estabeleceu as regras de suporte no WhatsApp.</div>
+        </div>
+
+        <div class="chk-group">
+          <div class="chk-title">🎯 Oferta &amp; Posicionamento</div>
+          <div class="chk-item"><div class="chk-box"></div> Recorte cirúrgico da promessa (resultado em 30 dias).</div>
+          <div class="chk-item"><div class="chk-box"></div> Lista de critérios de quem você NÃO aceita na turma.</div>
+          <div class="chk-item"><div class="chk-box"></div> Link de pagamento parcelado em até 12x configurado.</div>
+          <div class="chk-item"><div class="chk-box"></div> Contrato enxuto de prestação de serviços preparado.</div>
+        </div>
+
+        <div class="chk-group">
+          <div class="chk-title">💬 Conversão no Direct</div>
+          <div class="chk-item"><div class="chk-box"></div> Carrossel de autoridade publicado com gancho forte.</div>
+          <div class="chk-item"><div class="chk-box"></div> Automação ativada com a palavra-chave "GABARITO".</div>
+          <div class="chk-item"><div class="chk-box"></div> Roteiro de 4 etapas memorizado para atender as leads.</div>
+        </div>
+      </div>
+
+      <!-- SUPER CAIXA VIP DE CONVITE PARA A SESSÃO ESTRATÉGICA -->
+      <div class="vip-box">
+        <div class="vip-tag">✦ CONVITE EXCLUSIVO • SESSÃO ESTRATÉGICA INDIVIDUAL</div>
+        <div class="vip-title">QUER DESENHAR A SUA MENTORIA DE R$ 5K A R$ 10K COM SILVANA ROSA?</div>
+        <p class="vip-desc">
+          Se você tem mais de 10 anos de mercado, clientes consolidados e não quer passar meses errando sozinha tentando empacotar seu conhecimento, eu posso analisar o seu modelo de negócio pessoalmente. Na <strong>Sessão Estratégica Individual (1 hora comigo)</strong>, nós vamos identificar sua competência invisível, desenhar seu Notion de bordo enxuto e traçar a rota exata para suas primeiras vendas com alta margem.
+        </p>
+        <a href="https://sessao.silvanarosa.com.br" class="vip-btn" target="_blank">
+          👉 AGENDAR 1H COMIGO • SESSÃO ESTRATÉGICA INDIVIDUAL
+        </a>
+        <div class="vip-url-sub">
+          Link oficial direto: <strong>sessao.silvanarosa.com.br</strong> • 1 Hora Individual com Silvana Rosa • Vagas Limitadas
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-meta">
+      <div>SILVANA ROSA • Mentora de Negócios &amp; One Person Business • @eu.silvanarosa</div>
+      <div>GABARITO HOMOLOGADO // PÁGINA 05 DE 05</div>
+    </div>
+  </div>
+
+</body>
+</html>
