@@ -1,0 +1,1091 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>60 Prompts de Marketing & Vendas com Claude — Silvana Rosa</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600;1,700&family=Montserrat:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600;1,700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-dark: #041518;
+      --bg-card: #082226;
+      --bg-card-hover: #0c2d33;
+      --gold-champagne: #ECE1C3;
+      --gold-light: #F4EEDF;
+      --tiffany: #8EBDB6;
+      --tiffany-dark: #0D9488;
+      --text-main: #FFFFFF;
+      --text-muted: #A3B8B5;
+      --border-card: rgba(236, 225, 195, 0.15);
+      --border-accent: rgba(142, 189, 182, 0.3);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg-dark);
+      color: var(--text-main);
+      font-family: 'Montserrat', sans-serif;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      padding-bottom: 80px;
+    }
+
+    /* Top Brand Bar */
+    .top-bar {
+      border-bottom: 1px solid var(--border-card);
+      padding: 18px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(4, 21, 24, 0.95);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(10px);
+    }
+
+    .brand-logo {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 15px;
+      font-weight: 700;
+      letter-spacing: 4px;
+      color: var(--gold-champagne);
+      text-transform: uppercase;
+    }
+
+    .brand-logo span {
+      color: var(--tiffany);
+      font-weight: 500;
+      margin-left: 6px;
+    }
+
+    .btn-top-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: linear-gradient(135deg, var(--gold-champagne), #D8C7A0);
+      color: #041518;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      padding: 9px 18px;
+      border-radius: 6px;
+      text-decoration: none;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .btn-top-cta:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(236, 225, 195, 0.25);
+    }
+
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* Hero Section */
+    .hero {
+      padding: 60px 0 40px;
+      text-align: center;
+    }
+
+    .hero-badge {
+      display: inline-block;
+      background: rgba(142, 189, 182, 0.15);
+      border: 1px solid var(--border-accent);
+      color: var(--tiffany);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      padding: 6px 16px;
+      border-radius: 50px;
+      margin-bottom: 20px;
+    }
+
+    .hero-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 44px;
+      font-weight: 700;
+      line-height: 1.15;
+      color: var(--gold-champagne);
+      margin-bottom: 16px;
+    }
+
+    .hero-title em {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      color: var(--tiffany);
+      font-weight: 600;
+    }
+
+    .hero-subtitle {
+      font-size: 17px;
+      color: var(--text-muted);
+      max-width: 720px;
+      margin: 0 auto 35px;
+      line-height: 1.7;
+    }
+
+    /* Offer Banner (Acervo Completo) */
+    .offer-banner {
+      background: linear-gradient(135deg, rgba(8, 34, 38, 0.95), rgba(13, 58, 64, 0.85));
+      border: 1px solid var(--gold-champagne);
+      border-radius: 14px;
+      padding: 32px 36px;
+      margin-bottom: 50px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .offer-banner::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(236, 225, 195, 0.06) 0%, transparent 60%);
+      pointer-events: none;
+    }
+
+    .offer-badge {
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 3px;
+      color: #041518;
+      background: var(--gold-champagne);
+      padding: 4px 14px;
+      border-radius: 4px;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+
+    .offer-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 26px;
+      color: var(--gold-champagne);
+      margin-bottom: 10px;
+    }
+
+    .offer-desc {
+      font-size: 15px;
+      color: var(--text-muted);
+      max-width: 650px;
+      margin-bottom: 22px;
+    }
+
+    .btn-main-offer {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      background: linear-gradient(135deg, #ECE1C3, #DFC894);
+      color: #041518;
+      font-size: 15px;
+      font-weight: 800;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      padding: 16px 36px;
+      border-radius: 8px;
+      text-decoration: none;
+      box-shadow: 0 8px 25px rgba(236, 225, 195, 0.3);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .btn-main-offer:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 35px rgba(236, 225, 195, 0.45);
+    }
+
+    /* Index Nav */
+    .blocos-nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+      margin-bottom: 45px;
+    }
+
+    .nav-pill {
+      background: rgba(8, 34, 38, 0.8);
+      border: 1px solid var(--border-card);
+      color: var(--text-muted);
+      font-size: 13px;
+      font-weight: 600;
+      padding: 8px 16px;
+      border-radius: 50px;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+    .nav-pill:hover {
+      background: var(--gold-champagne);
+      color: #041518;
+      border-color: var(--gold-champagne);
+    }
+
+    /* Category Section */
+    .categoria-bloco {
+      margin-bottom: 50px;
+      scroll-margin-top: 90px;
+    }
+
+    .categoria-header {
+      display: flex;
+      align-items: baseline;
+      gap: 14px;
+      border-bottom: 1px solid var(--border-card);
+      padding-bottom: 12px;
+      margin-bottom: 22px;
+    }
+
+    .cat-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 32px;
+      font-style: italic;
+      color: var(--tiffany);
+      font-weight: 700;
+    }
+
+    .cat-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 24px;
+      color: var(--gold-champagne);
+      font-weight: 700;
+    }
+
+    /* Prompts Grid */
+    .prompts-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
+      gap: 18px;
+    }
+
+    @media (max-width: 600px) {
+      .prompts-grid {
+        grid-template-columns: 1fr;
+      }
+      .hero-title {
+        font-size: 32px;
+      }
+      .offer-banner {
+        padding: 24px 18px;
+      }
+      .btn-main-offer {
+        width: 100%;
+        justify-content: center;
+        padding: 14px 20px;
+        font-size: 13px;
+      }
+    }
+
+    .prompt-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-card);
+      border-radius: 10px;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+    .prompt-card:hover {
+      border-color: var(--tiffany);
+      transform: translateY(-2px);
+    }
+
+    .card-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 12px;
+    }
+
+    .prompt-tag {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--tiffany);
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .prompt-num {
+      font-size: 12px;
+      color: var(--text-muted);
+      font-weight: 600;
+    }
+
+    .prompt-body {
+      font-size: 14px;
+      color: #E2E8F0;
+      line-height: 1.6;
+      background: rgba(4, 21, 24, 0.6);
+      padding: 14px;
+      border-radius: 6px;
+      border-left: 3px solid var(--gold-champagne);
+      margin-bottom: 14px;
+      font-family: 'Montserrat', sans-serif;
+      white-space: pre-line;
+    }
+
+    .btn-copy {
+      align-self: flex-end;
+      background: rgba(236, 225, 195, 0.1);
+      border: 1px solid var(--border-card);
+      color: var(--gold-champagne);
+      font-size: 12px;
+      font-weight: 600;
+      padding: 7px 14px;
+      border-radius: 5px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.2s;
+    }
+    .btn-copy:hover {
+      background: var(--gold-champagne);
+      color: #041518;
+    }
+    .btn-copy.copied {
+      background: var(--tiffany-dark);
+      color: #FFFFFF;
+      border-color: var(--tiffany-dark);
+    }
+
+    /* Footer Section */
+    .footer {
+      text-align: center;
+      padding-top: 40px;
+      border-top: 1px solid var(--border-card);
+      color: var(--text-muted);
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Brand Navigation -->
+  <header class="top-bar">
+    <div class="brand-logo">
+      Silvana Rosa <span>| Mentoria</span>
+    </div>
+    <a href="https://prompts.silvanarosa.com.br/" target="_blank" class="btn-top-cta">
+      Ver Acervo Completo →
+    </a>
+  </header>
+
+  <main class="container">
+    <!-- Hero Header -->
+    <section class="hero">
+      <div class="hero-badge">MATERIAL EXCLUSIVO · EDIÇÃO 2026</div>
+      <h1 class="hero-title">
+        60 Prompts de Marketing & Vendas<br>
+        <em>com Claude e Inteligência Artificial</em>
+      </h1>
+      <p class="hero-subtitle">
+        Fórmulas estratégicas calibradas para posicionamento executivo, copywriting de alta conversão, roteiros magnéticos e vendas de mentoria e produtos digitais high ticket.
+      </p>
+
+      <!-- Main Highlight Offer Banner -->
+      <div class="offer-banner">
+        <div class="offer-badge">ACERVO EXECUTIVO EXPANDIDO</div>
+        <h2 class="offer-title">Quer o Acervo Secreto com +2.000 Prompts Prontos?</h2>
+        <p class="offer-desc">
+          Além destes 60 prompts essenciais, acesse a biblioteca completa com frameworks validados para criação de ofertas, funis de Direct, automação no ManyChat e esteiras de vendas completas.
+        </p>
+        <a href="https://prompts.silvanarosa.com.br/" target="_blank" class="btn-main-offer">
+          Acessar Acervo Completo em Prompts.SilvanaRosa.com.br ────→
+        </a>
+      </div>
+
+      <!-- Quick Category Nav -->
+      <nav class="blocos-nav">
+        <a href="#bloco-1" class="nav-pill">1. Estratégia de Marca</a>
+        <a href="#bloco-2" class="nav-pill">2. Conteúdo de Autoridade</a>
+        <a href="#bloco-3" class="nav-pill">3. Copy de Vendas</a>
+        <a href="#bloco-4" class="nav-pill">4. Vídeos & VSL</a>
+        <a href="#bloco-5" class="nav-pill">5. Anúncios</a>
+        <a href="#bloco-6" class="nav-pill">6. Depoimentos</a>
+        <a href="#bloco-7" class="nav-pill">7. Ímãs de Leads</a>
+        <a href="#bloco-8" class="nav-pill">8. Sequências de Email</a>
+        <a href="#bloco-9" class="nav-pill">9. Webinars & Lives</a>
+      </nav>
+    </section>
+
+    <!-- BLOCO 1 -->
+    <section id="bloco-1" class="categoria-bloco">
+      <div class="categoria-header">
+        <span class="cat-num">01</span>
+        <h2 class="cat-title">Estratégia de Marca & Inteligência de Mercado</h2>
+      </div>
+      <div class="prompts-grid">
+        <div class="prompt-card">
+          <div class="card-top">
+            <span class="prompt-tag">Pesquisa de ICP Profunda</span>
+            <span class="prompt-num">#01</span>
+          </div>
+          <div class="prompt-body" id="p1">Atue como estrategista sênior de posicionamento e inteligência de mercado. Para meu nicho [inserir nicho] e público-alvo [descrever perfil do cliente], crie um diagnóstico aprofundado: quais são os 10 maiores problemas e dores ocultas, as frustrações com soluções tradicionais que falharam e o vocabulário exato que eles usam quando desabafam. Seja ultraespecífico, sem clichês genéricos.</div>
+          <button class="btn-copy" onclick="copiarPrompt('p1', this)">📋 Copiar Prompt</button>
+        </div>
+
+        <div class="prompt-card">
+          <div class="card-top">
+            <span class="prompt-tag">Biblioteca de Vocabulário da Dor</span>
+            <span class="prompt-num">#02</span>
+          </div>
+          <div class="prompt-body" id="p2">Com base no perfil do meu cliente ideal de mentoria, construa uma biblioteca de linguagem em 3 partes: 1) Vocabulário da dor: como eles descrevem o caos atual; 2) Vocabulário aspiracional: como definem o sucesso financeiro e profissional; 3) Autopercepção: o que sentem sobre si mesmos enquanto não resolvem isso. Use frases viscerais e autênticas.</div>
+          <button class="btn-copy" onclick="copiarPrompt('p2', this)">📋 Copiar Prompt</button>
+        </div>
+
+        <div class="prompt-card">
+          <div class="card-top">
+            <span class="prompt-tag">Pilares de Conteúdo de Autoridade</span>
+            <span class="prompt-num">#03</span>
+          </div>
+          <div class="prompt-body" id="p3">Ajude-me a desenvolver de 3 a 5 pilares estratégicos de conteúdo para meu perfil. Cada pilar deve ser ancorado em uma crença contrária ou observação não convencional do mercado de [tema], conectando diretamente a uma solução que leva à minha mentoria high ticket.</div>
+          <button class="btn-copy" onclick="copiarPrompt('p3', this)">📋 Copiar Prompt</button>
+        </div>
+
+        <div class="prompt-card">
+          <div class="card-top">
+            <span class="prompt-tag">Perfil de Tom de Voz da Marca</span>
+            <span class="prompt-num">#04</span>
+          </div>
+          <div class="prompt-body" id="p4">Analise este exemplo de escrita que resume meu posicionamento: [cole seu texto]. Crie um manual de voz em 4 diretrizes: ritmo de frases, vocabulário característico, posturas não negociáveis e ganchos de abertura. Permita que qualquer copywriter replique meu estilo fielmente.</div>
+          <button class="btn-copy" onclick="copiarPrompt('p4', this)">📋 Copiar Prompt</button>
+        </div>
+
+        <div class="prompt-card">
+          <div class="card-top">
+            <span class="prompt-tag">Declaração de Posicionamento</span>
+            <span class="prompt-num">#05</span>
+          </div>
+          <div class="prompt-body" id="p5">Escreva uma declaração de posicionamento de 70 a 90 palavras, em primeira pessoa: para quem ajudo [situação específica], o resultado tangível que entrego [com métrica ou prazo], o meu método único [diferencial] e por que confiar em mim [prova de autoridade].</div>
+          <button class="btn-copy" onclick="copiarPrompt('p5', this)">📋 Copiar Prompt</button>
+        </div>
+
+        <div class="prompt-card">
+          <div class="card-top">
+            <span class="prompt-tag">Mapeamento de Diferenciais</span>
+            <span class="prompt-num">#06</span>
+          </div>
+          <div class="prompt-body" id="p6">Defina os 3 principais diferenciais da minha mentoria em relação a cursos gravados e agências tradicionais. Mapeie: 1) O método de implementação rápida; 2) O acompanhamento próximo; 3) O resultado específico que outros não garantem. Escreva 3 argumentos fortes e irrefutáveis.</div>
+          <button class="btn-copy" onclick="copiarPrompt('p6', this)">📋 Copiar Prompt</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- BLOCO 2 -->
+    <section id="bloco-2" class="categoria-bloco">
+      <div class="categoria-header">
+        <span class="cat-num">02</span>
+        <h2 class="cat-title">Conteúdo de Autoridade & Redes Sociais</h2>
+      </div>
+      <div class="prompts-grid">
+        <div class="prompt-card">
+          <div class="card-top">
+            <span class="prompt-tag">5 Ganchos de Quebra de Padrão</span>
+            <span class="prompt-num">#07</span>
+          </div>
+          <div class="prompt-body" id="p7">Escreva 5 ganchos magnéticos para post de redes sociais (máximo 2 linhas cada). A linha 1 quebra o padrão e interrompe o scroll; a linha 2 justifica por que continuar lendo. Varie entre credibilidade, observação dura de mercado e erro comum. Sem perguntas óbvias.</div>
+          <button class="btn-copy" onclick="copiarPrompt('p7', this)">📋 Copiar Prompt</button>
+        </div>
+
+        <div class="prompt-card">
+          <div class="card-top">
+            <span class="prompt-tag">Post de Lição de Bastidor</span>
+            <span class="prompt-num">#08</span>
+          </div>
+          <div class="prompt-body" id="p8">Escreva um post de 200 a 280 palavras em primeira pessoa: abra com um gancho baseado em um erro ou aprendizado real dos meus anos de experiência, ensine um processo prático passo a passo e encerre com uma lição de liderança para o leitor.</div>
+          <button class="btn-copy" onclick="copiarPrompt('p8', this)">📋 Copiar Prompt</button>
+        </div>
+
+        <div class="prompt-card">
+          <div class="card-top">
+            <span class="prompt-tag">Storytelling com Vulnerabilidade</span>
+            <span class="prompt-num">#09</span>
+          </div>
+          <div class="prompt-body" id="p9">Escreva um post narrativo de 220 a 300 palavras: conte um momento decisivo da minha carreira [descreva o fato], o que mudou na minha visão de negócios e como essa virada de chave moldou o método que ensino hoje às minhas mentoradas.</div>
+          <button class="btn-copy" onclick="copiarPrompt('p9', this)">📋 Copiar Prompt</button>
+        </div>
+
+        <div class="prompt-card">
+          <div class="card-top">
+            <span class="prompt-tag">Post de Visão Contrariana</span>
+            <span class="prompt-num">#10</span>
+          </div>
+          <div class="prompt-body" id="p10">Escreva um post de 200 a 260 palavras defendendo uma postura contrária à tendência do mercado sobre [tema]. Mostre por que a maioria está errada com argumentos lógicos e dados práticos, e reafirme o método inteligente que gera resultados sustentáveis.</div>
+          <button class="btn-copy" onclick="copiarPrompt('p10', this)">📋 Copiar Prompt</button>
+        </div>
+
+        <div class="prompt-card">
+          <div class="card-top">
+            <span class="prompt-tag">Estudo de Caso Educativo</span>
+            <span class="prompt-num">#11</span>
+          </div>
+          <div class="prompt-body" id="p11">Escreva um post de 200 a 270 palavras apresentando um resultado real de cliente de forma educativa: explique a situação inicial, o gargalo que identificamos no diagnóstico e a mudança simples que destravou o faturamento, sem tom de autopromoção vazia.</div>
+          <button class="btn-copy" onclick="copiarPrompt('p11', this)">📋 Copiar Prompt</button>
+        </div>
+
+        <div class="prompt-card">
+          <div class="card-top">
+            <span class="prompt-tag">Framework Prático de 1 Página</span>
+            <span class="prompt-num">#12</span>
+          </div>
+          <div class="prompt-body" id="p12">Escreva um post de 230 a 300 palavras apresentando um framework operacional em 3 etapas para resolver [problema imediato]. Deve ser tão claro e prático que o leitor consiga aplicar ainda hoje e ver valor imediato.</div>
+          <button class="btn-copy" onclick="copiarPrompt('p12', this)">📋 Copiar Prompt</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- BLOCO 3 -->
+    <section id="bloco-3" class="categoria-bloco">
+      <div class="categoria-header">
+        <span class="cat-num">03</span>
+        <h2 class="cat-title">Posicionamento de Oferta & Copy de Vendas</h2>
+      </div>
+      <div class="prompts-grid">
+        <div class="prompt-card">
+          <div class="card-top">
+            <span class="prompt-tag">10 Títulos de Alta Conversão</span>
+            <span class="prompt-num">#13</span>
+          </div>
+          <div class="prompt-body" id="p13">Crie 10 títulos magnéticos para a página da minha mentoria. Cada um com menos de 15 palavras, destacando o resultado principal com prazo ou transformação concreta. Elimine adjetivos vagos e clichês.</div>
+          <button class="btn-copy" onclick="copiarPrompt('p13', this)">📋 Copiar Prompt</button>
+        </div>
+
+        <div class="prompt-card">
+          <div class="card-top">
+            <span class="prompt-tag">Proposta de Valor em 3 Entregáveis</span>
+            <span class="prompt-num">#14</span>
+          </div>
+          <div class="prompt-body" id="p14">Construa a proposta de valor da minha oferta baseada em 3 entregáveis fundamentais. Para cada um, descreva o resultado concreto (com métrica ou impacto prático) e o que muda na rotina do cliente em até 3 frases.</div>
+          <button class="btn-copy" onclick="copiarPrompt('p14', this)">📋 Copiar Prompt</button>
+        </div>
+
+        <div class="prompt-card">
+          <div class="card-top">
+            <span class="prompt-tag">Diagnóstico da Dor do Cliente</span>
+            <span class="prompt-num">#15</span>
+          </div>
+          <div class="prompt-body" id="p15">Escreva a seção de introdução do problema da página de vendas (menos de 200 palavras) descrevendo as frustrações diárias do meu cliente ideal em suas próprias palavras. Faça-o sentir-se profundamente compreendido, sem tom acusatório.</div>
+          <button class="btn-copy" onclick="copiarPrompt('p15', this)">📋 Copiar Prompt</button>
+        </div>
+
+        <div class="prompt-card">
+          <div class="card-top">
+            <span class="prompt-tag">Seção 'Para Quem É'</span>
+            <span class="prompt-num">#16</span>
+          </div>
+          <div class="prompt-body" id="p16">Escreva 5 afirmações precisas de 'Isto é para você se...', descrevendo a maturidade do negócio, o momento profissional e o compromisso necessário para ter sucesso no meu programa de mentoria.</div>
+          <button class="btn-copy" onclick="copiarPrompt('p16', this)">📋 Copiar Prompt</button>
+        </div>
+
+        <div class="prompt-card">
+          <div class="card-top">
+            <span class="prompt-tag">Seção 'Para Quem NÃO É'</span>
+            <span class="prompt-num">#17</span>
+          </div>
+          <div class="prompt-body" id="p17">Escreva 4 afirmações diretas e elegantes de 'Isto NÃO é para você se...', filtrando curiosos, pessoas que buscam atalhos mágicos ou perfis desalinhados com a postura executiva da nossa marca.</div>
+          <button class="btn-copy" onclick="copiarPrompt('p17', this)">📋 Copiar Prompt</button>
+        </div>
+
+        <div class="prompt-card">
+          <div class="card-top">
+            <span class="prompt-tag">Garantia & Inversão de Risco</span>
+            <span class="prompt-num">#18</span>
+          </div>
+          <div class="prompt-body" id="p18">Escreva um texto de inversão de risco e segurança para a página de aplicação da mentoria, transmitindo total confiança no método e profissionalismo ético inegociável.</div>
+          <button class="btn-copy" onclick="copiarPrompt('p18', this)">📋 Copiar Prompt</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- BLOCO 4 -->
+    <section id="bloco-4" class="categoria-bloco">
+      <div class="categoria-header">
+        <span class="cat-num">04</span>
+        <h2 class="cat-title">Roteiros de Vídeo, Reels & VSL</h2>
+      </div>
+      <div class="prompts-grid">
+        <div class="prompt-card">
+          <div class="card-top">
+            <span class="prompt-tag">Reels de Retenção Máxima (60s)</span>
+            <span class="prompt-num">#19</span>
+          </div>
+          <div class="prompt-body" id="p19">Escreva um roteiro de 60 segundos para vídeo em plano médio: gancho forte de 3 segundos, desenvolvimento direto de uma única ideia de impacto e fechamento com CTA de engajamento no Direct.</div>
+          <button class="btn-copy" onclick="copiarPrompt('p19', this)">📋 Copiar Prompt</button>
+        </div>
+
+        <div class="prompt-card">
+          <div class="card-top">
+            <span class="prompt-tag">Vídeo Longo de Autoridade (3-5 min)</span>
+            <span class="prompt-num">#20</span>
+          </div>
+          <div class="prompt-body" id="p20">Estruture um roteiro para vídeo mais longo: gancho instigante, contextualização do erro comum no mercado, explicação didática do método em 3 passos e CTA claro para aplicação da mentoria.</div>
+          <button class="btn-copy" onclick="copiarPrompt('p20', this)">📋 Copiar Prompt</button>
+        </div>
+
+        <div class="prompt-card">
+          <div class="card-top">
+            <span class="prompt-tag">5 Ganchos de Abertura para VSL</span>
+            <span class="prompt-num">#21</span>
+          </div>
+          <div class="prompt-body" id="p21">Escreva 5 opções de gancho de abertura (máximo 75 palavras cada) para uma apresentação de vendas: cada um abordando um ponto cego crítico do negócio do cliente, gerando curiosidade irrecusável.</div>
+          <button class="btn-copy" onclick="copiarPrompt('p21', this)">📋 Copiar Prompt</button>
+        </div>
+
+        <div class="prompt-card">
+          <div class="card-top">
+            <span class="prompt-tag">Problema Real na VSL (2 min)</span>
+            <span class="prompt-num">#22</span>
+          </div>
+          <div class="prompt-body" id="p22">Escreva os 2 minutos iniciais da VSL descrevendo por que os métodos tradicionais não funcionam mais e como a falta de estrutura mantém o profissional preso no operacional.</div>
+          <button class="btn-copy" onclick="copiarPrompt('p22', this)">📋 Copiar Prompt</button>
+        </div>
+
+        <div class="prompt-card">
+          <div class="card-top">
+            <span class="prompt-tag">Apresentação do Mecanismo Único</span>
+            <span class="prompt-num">#23</span>
+          </div>
+          <div class="prompt-body" id="p23">Escreva a seção da VSL que explica o método exclusivo [nome do método], detalhando como ele soluciona o gargalo com previsibilidade e elegância.</div>
+          <button class="btn-copy" onclick="copiarPrompt('p23', this)">📋 Copiar Prompt</button>
+        </div>
+
+        <div class="prompt-card">
+          <div class="card-top">
+            <span class="prompt-tag">Apresentação de Provas & Resultados</span>
+            <span class="prompt-num">#24</span>
+          </div>
+          <div class="prompt-body" id="p24">Escreva a seção de cases da VSL: 3 exemplos condensados de clientes que implementaram o processo, mostrando o ponto de partida, o ajuste realizado e o faturamento alcançado.</div>
+          <button class="btn-copy" onclick="copiarPrompt('p24', this)">📋 Copiar Prompt</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- BLOCO 5 -->
+    <section id="bloco-5" class="categoria-bloco">
+      <div class="categoria-header">
+        <span class="cat-num">05</span>
+        <h2 class="cat-title">Copy para Anúncios de Alta Conversão</h2>
+      </div>
+      <div class="prompts-grid">
+        <div class="prompt-card">
+          <div class="card-top">
+            <span class="prompt-tag">3 Anúncios para Ímã de Leads</span>
+            <span class="prompt-num">#25</span>
+          </div>
+          <div class="prompt-body" id="p25">Escreva 3 variações de texto para anúncio (menos de 100 palavras cada) promovendo um recurso gratuito: gancho de quebra de padrão, valor prático da ferramenta e CTA direto para comentar a palavra-chave.</div>
+          <button class="btn-copy" onclick="copiarPrompt('p25', this)">📋 Copiar Prompt</button>
+        </div>
+
+        <div class="prompt-card">
+          <div class="card-top">
+            <span class="prompt-tag">Anúncio de Tráfego Direto para Mentoria</span>
+            <span class="prompt-num">#26</span>
+          </div>
+          <div class="prompt-body" id="p26">Escreva 3 variações de copy para público frio no feed e stories: abra com uma situação real de gargalo, apresente a mentoria como solução estruturada e convide para a sessão diagnóstica.</div>
+          <button class="btn-copy" onclick="copiarPrompt('p26', this)">📋 Copiar Prompt</button>
+        </div>
+
+        <div class="prompt-card">
+          <div class="card-top">
+            <span class="prompt-tag">2 Anúncios de Retargeting</span>
+            <span class="prompt-num">#27</span>
+          </div>
+          <div class="prompt-body" id="p27">Escreva 2 anúncios curtos de retargeting para quem iniciou a aplicação e não concluiu: aborde a principal dúvida ou objeção com elegância e convide para tirar dúvidas diretamente no WhatsApp.</div>
+          <button class="btn-copy" onclick="copiarPrompt('p27', this)">📋 Copiar Prompt</button>
+        </div>
+
+        <div class="prompt-card">
+          <div class="card-top">
+            <span class="prompt-tag">Roteiro de Anúncio de 30 Segundos</span>
+            <span class="prompt-num">#28</span>
+          </div>
+          <div class="prompt-body" id="p28">Crie um roteiro de anúncio em vídeo de 30 segundos: 5s de gancho visual/falado, 15s de explicação do benefício e 10s de chamada clara para a ação com direcionamento ao link da bio.</div>
+          <button class="btn-copy" onclick="copiarPrompt('p28', this)">📋 Copiar Prompt</button>
+        </div>
+
+        <div class="prompt-card">
+          <div class="card-top">
+            <span class="prompt-tag">10 Ganchos de Teste para Criativos</span>
+            <span class="prompt-num">#29</span>
+          </div>
+          <div class="prompt-body" id="p29">Escreva 10 primeiras frases de anúncio para testar em criativos estáticos e vídeos: variando entre perguntas provocativas, números específicos e declarações contraintuitivas.</div>
+          <button class="btn-copy" onclick="copiarPrompt('p29', this)">📋 Copiar Prompt</button>
+        </div>
+
+        <div class="prompt-card">
+          <div class="card-top">
+            <span class="prompt-tag">Anúncio para Masterclass / Evento</span>
+            <span class="prompt-num">#30</span>
+          </div>
+          <div class="prompt-body" id="p30">Crie 3 opções de copy (menos de 120 palavras cada) convidando para um treinamento ao vivo: destaque o tema central, quem deve participar e data/horário com urgência real.</div>
+          <button class="btn-copy" onclick="copiarPrompt('p30', this)">📋 Copiar Prompt</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- BLOCO 6 -->
+    <section id="bloco-6" class="categoria-bloco">
+      <div class="categoria-header">
+        <span class="cat-num">06</span>
+        <h2 class="cat-title">Depoimentos & Casos de Sucesso</h2>
+      </div>
+      <div class="prompts-grid">
+        <div class="prompt-card">
+          <div class="card-top">
+            <span class="prompt-tag">10 Perguntas para Entrevista de Case</span>
+            <span class="prompt-num">#31</span>
+          </div>
+          <div class="prompt-body" id="p31">Crie um questionário de 10 perguntas abertas para entrevistar alunas da mentoria: extraindo o cenário inicial de insegurança, o momento da virada, o resultado financeiro obtido e o conselho para quem está em dúvida.</div>
+          <button class="btn-copy" onclick="copiarPrompt('p31', this)">📋 Copiar Prompt</button>
+        </div>
+
+        <div class="prompt-card">
+          <div class="card-top">
+            <span class="prompt-tag">Roteiro de Gravação de Depoimento</span>
+            <span class="prompt-num">#32</span>
+          </div>
+          <div class="prompt-body" id="p32">Monte a estrutura de uma gravação de 15 minutos com aluna: perguntas que conduzem a narrativa com naturalidade, destacando dados de faturamento e transformação pessoal.</div>
+          <button class="btn-copy" onclick="copiarPrompt('p32', this)">📋 Copiar Prompt</button>
+        </div>
+
+        <div class="prompt-card">
+          <div class="card-top">
+            <span class="prompt-tag">Estudo de Caso Estruturado</span>
+            <span class="prompt-num">#33</span>
+          </div>
+          <div class="prompt-body" id="p33">Escreva um case de sucesso narrativo de 400 a 500 palavras: abra com o resultado surpreendente alcançado, conte a jornada passo a passo e encerre mostrando que o método é replicável.</div>
+          <button class="btn-copy" onclick="copiarPrompt('p33', this)">📋 Copiar Prompt</button>
+        </div>
+
+        <div class="prompt-card">
+          <div class="card-top">
+            <span class="prompt-tag">Email de Case de Sucesso</span>
+            <span class="prompt-num">#34</span>
+          </div>
+          <div class="prompt-body" id="p34">Escreva um email de relacionamento de 250 palavras contando a história inspiradora de uma mentorada, destacando a principal lição aprendida e convidando para a nova turma da mentoria.</div>
+          <button class="btn-copy" onclick="copiarPrompt('p34', this)">📋 Copiar Prompt</button>
+        </div>
+
+        <div class="prompt-card">
+          <div class="card-top">
+            <span class="prompt-tag">Legenda para Print de Resultado</span>
+            <span class="prompt-num">#35</span>
+          </div>
+          <div class="prompt-body" id="p35">Crie uma legenda para acompanhar prints de resultados de alunas: contextualize o esforço, parabenize a dedicação e mostre como o método transforma competência em dinheiro.</div>
+          <button class="btn-copy" onclick="copiarPrompt('p35', this)">📋 Copiar Prompt</button>
+        </div>
+
+        <div class="prompt-card">
+          <div class="card-top">
+            <span class="prompt-tag">Microdepoimentos para Checkout</span>
+            <span class="prompt-num">#36</span>
+          </div>
+          <div class="prompt-body" id="p36">Escreva microdepoimentos em 2 frases para posicionar estrategicamente perto do botão de pagamento, mitigando a última objeção de compra.</div>
+          <button class="btn-copy" onclick="copiarPrompt('p36', this)">📋 Copiar Prompt</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- BLOCO 7 -->
+    <section id="bloco-7" class="categoria-bloco">
+      <div class="categoria-header">
+        <span class="cat-num">07</span>
+        <h2 class="cat-title">Criação de Ímãs de Leads (Lead Magnets)</h2>
+      </div>
+      <div class="prompts-grid">
+        <div class="prompt-card">
+          <div class="card-top">
+            <span class="prompt-tag">10 Ideias de Ímãs de Alto Valor</span>
+            <span class="prompt-num">#37</span>
+          </div>
+          <div class="prompt-body" id="p37">Gere 10 ideias de materiais gratuitos para atrair empresárias e profissionais liberais: planilhas operacionais, checklists, roteiros prontos e mapas visuais que gerem valor imediato.</div>
+          <button class="btn-copy" onclick="copiarPrompt('p37', this)">📋 Copiar Prompt</button>
+        </div>
+
+        <div class="prompt-card">
+          <div class="card-top">
+            <span class="prompt-tag">10 Títulos Atraentes para o Ímã</span>
+            <span class="prompt-num">#38</span>
+          </div>
+          <div class="prompt-body" id="p38">Crie 10 títulos para meu novo ímã de leads, combinando especificidade, facilidade de consumo e relevância para o público que compra mentoria.</div>
+          <button class="btn-copy" onclick="copiarPrompt('p38', this)">📋 Copiar Prompt</button>
+        </div>
+
+        <div class="prompt-card">
+          <div class="card-top">
+            <span class="prompt-tag">Estrutura Detalhada do Recurso</span>
+            <span class="prompt-num">#39</span>
+          </div>
+          <div class="prompt-body" id="p39">Elabore o sumário executivo e o esqueleto de conteúdo para uma planilha/guia em PDF de 5 páginas: introdução rápida, 3 passos práticos e convite para a mentoria na última página.</div>
+          <button class="btn-copy" onclick="copiarPrompt('p39', this)">📋 Copiar Prompt</button>
+        </div>
+
+        <div class="prompt-card">
+          <div class="card-top">
+            <span class="prompt-tag">Introdução Conectora do Ímã</span>
+            <span class="prompt-num">#40</span>
+          </div>
+          <div class="prompt-body" id="p40">Escreva o texto introdutório do material (150 palavras): estabeleça autoridade imediata, explique como tirar o máximo proveito da ferramenta e gere expectativa para os próximos passos.</div>
+          <button class="btn-copy" onclick="copiarPrompt('p40', this)">📋 Copiar Prompt</button>
+        </div>
+
+        <div class="prompt-card">
+          <div class="card-top">
+            <span class="prompt-tag">Ponte Estratégica para Mentoria</span>
+            <span class="prompt-num">#41</span>
+          </div>
+          <div class="prompt-body" id="p41">Escreva a página final do material gratuito conectando o que foi aprendido à necessidade de um acompanhamento estratégico mais profundo através da minha mentoria.</div>
+          <button class="btn-copy" onclick="copiarPrompt('p41', this)">📋 Copiar Prompt</button>
+        </div>
+
+        <div class="prompt-card">
+          <div class="card-top">
+            <span class="prompt-tag">Página de Obrigado & Upsell</span>
+            <span class="prompt-num">#42</span>
+          </div>
+          <div class="prompt-body" id="p42">Escreva a copy da página de agradecimento após o download: oriente a verificar o email/WhatsApp e faça uma oferta especial de entrada para acelerar os resultados.</div>
+          <button class="btn-copy" onclick="copiarPrompt('p42', this)">📋 Copiar Prompt</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- BLOCO 8 -->
+    <section id="bloco-8" class="categoria-bloco">
+      <div class="categoria-header">
+        <span class="cat-num">08</span>
+        <h2 class="cat-title">Sequências de Email Lucrativas</h2>
+      </div>
+      <div class="prompts-grid">
+        <div class="prompt-card">
+          <div class="card-top">
+            <span class="prompt-tag">Email 1: Boas-Vindas & Entrega</span>
+            <span class="prompt-num">#43</span>
+          </div>
+          <div class="prompt-body" id="p43">Escreva o primeiro email da sequência (menos de 200 palavras): entregue o link do material prometido, conte brevemente por que criei essa ferramenta e antecipe o tema do próximo email. 3 opções de assunto.</div>
+          <button class="btn-copy" onclick="copiarPrompt('p43', this)">📋 Copiar Prompt</button>
+        </div>
+
+        <div class="prompt-card">
+          <div class="card-top">
+            <span class="prompt-tag">Email 2: Quebra da Maior Objeção</span>
+            <span class="prompt-num">#44</span>
+          </div>
+          <div class="prompt-body" id="p44">Escreva o segundo email mostrando por que a maioria tenta implementar ferramentas sem um método estruturado e acaba se frustrando. Tom acolhedor e seguro, com lição acionável.</div>
+          <button class="btn-copy" onclick="copiarPrompt('p44', this)">📋 Copiar Prompt</button>
+        </div>
+
+        <div class="prompt-card">
+          <div class="card-top">
+            <span class="prompt-tag">Email 3: História Real & Prova</span>
+            <span class="prompt-num">#45</span>
+          </div>
+          <div class="prompt-body" id="p45">Escreva o terceiro email compartilhando a história de um momento decisivo em que mudar a estratégia de posicionamento transformou meu modelo de negócio. 3 opções de assunto de alta abertura.</div>
+          <button class="btn-copy" onclick="copiarPrompt('p45', this)">📋 Copiar Prompt</button>
+        </div>
+
+        <div class="prompt-card">
+          <div class="card-top">
+            <span class="prompt-tag">Email 4: Apresentação da Mentoria</span>
+            <span class="prompt-num">#46</span>
+          </div>
+          <div class="prompt-body" id="p46">Escreva o quarto email apresentando a mentoria como o caminho mais rápido e seguro para quem deseja implementar esse ecossistema com acompanhamento direto.</div>
+          <button class="btn-copy" onclick="copiarPrompt('p46', this)">📋 Copiar Prompt</button>
+        </div>
+
+        <div class="prompt-card">
+          <div class="card-top">
+            <span class="prompt-tag">Email 5: FAQ & Quebra de Dúvidas</span>
+            <span class="prompt-num">#47</span>
+          </div>
+          <div class="prompt-body" id="p47">Escreva um email objetivo esclarecendo as 3 perguntas mais frequentes recebidas no Direct sobre prazo, formato das sessões e dedicação necessária.</div>
+          <button class="btn-copy" onclick="copiarPrompt('p47', this)">📋 Copiar Prompt</button>
+        </div>
+
+        <div class="prompt-card">
+          <div class="card-top">
+            <span class="prompt-tag">Email 6: Encerramento de Vagas</span>
+            <span class="prompt-num">#48</span>
+          </div>
+          <div class="prompt-body" id="p48">Escreva o email final de aviso de encerramento de turma com urgência real, tom profissional e sem apelação sensacionalista.</div>
+          <button class="btn-copy" onclick="copiarPrompt('p48', this)">📋 Copiar Prompt</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- BLOCO 9 -->
+    <section id="bloco-9" class="categoria-bloco">
+      <div class="categoria-header">
+        <span class="cat-num">09</span>
+        <h2 class="cat-title">Promoção de Webinars & Eventos ao Vivo</h2>
+      </div>
+      <div class="prompts-grid">
+        <div class="prompt-card">
+          <div class="card-top">
+            <span class="prompt-tag">Página de Captura para Masterclass</span>
+            <span class="prompt-num">#49</span>
+          </div>
+          <div class="prompt-body" id="p49">Escreva a copy de uma landing page de alta conversão para aula ao vivo: título magnético, subtítulo com promessa clara, 3 tópicos que serão revelados e bio resumida da mentora.</div>
+          <button class="btn-copy" onclick="copiarPrompt('p49', this)">📋 Copiar Prompt</button>
+        </div>
+
+        <div class="prompt-card">
+          <div class="card-top">
+            <span class="prompt-tag">Confirmação de Inscrição</span>
+            <span class="prompt-num">#50</span>
+          </div>
+          <div class="prompt-body" id="p50">Escreva o email enviado imediatamente após o cadastro: confirme data, horário e link do YouTube/Zoom, e oriente a entrar no grupo VIP de avisos no WhatsApp.</div>
+          <button class="btn-copy" onclick="copiarPrompt('p50', this)">📋 Copiar Prompt</button>
+        </div>
+
+        <div class="prompt-card">
+          <div class="card-top">
+            <span class="prompt-tag">Antecipação (24h Antes)</span>
+            <span class="prompt-num">#51</span>
+          </div>
+          <div class="prompt-body" id="p51">Escreva o email de aquecimento enviado 24h antes da aula: compartilhe um insight preliminar e instrua a separar caderno e caneta para a aula.</div>
+          <button class="btn-copy" onclick="copiarPrompt('p51', this)">📋 Copiar Prompt</button>
+        </div>
+
+        <div class="prompt-card">
+          <div class="card-top">
+            <span class="prompt-tag">Aviso 'Estamos ao Vivo'</span>
+            <span class="prompt-num">#52</span>
+          </div>
+          <div class="prompt-body" id="p52">Escreva um email curto e urgente de 60 palavras com link direto para a transmissão ao vivo, destacando que não haverá gravação pública.</div>
+          <button class="btn-copy" onclick="copiarPrompt('p52', this)">📋 Copiar Prompt</button>
+        </div>
+
+        <div class="prompt-card">
+          <div class="card-top">
+            <span class="prompt-tag">Convocação no Instagram</span>
+            <span class="prompt-num">#53</span>
+          </div>
+          <div class="prompt-body" id="p53">Escreva um post convocando a audiência para a Masterclass: apresente o problema central, o que será entregue na aula e oriente a comentar a palavra de acesso.</div>
+          <button class="btn-copy" onclick="copiarPrompt('p53', this)">📋 Copiar Prompt</button>
+        </div>
+
+        <div class="prompt-card">
+          <div class="card-top">
+            <span class="prompt-tag">Abertura da Aula (Primeiros 3 min)</span>
+            <span class="prompt-num">#54</span>
+          </div>
+          <div class="prompt-body" id="p54">Escreva o roteiro para os 3 primeiros minutos da transmissão: saudações com energia executiva, contextualização do objetivo e instrução para aproveitar o conteúdo ao máximo.</div>
+          <button class="btn-copy" onclick="copiarPrompt('p54', this)">📋 Copiar Prompt</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- BLOCO BÔNUS -->
+    <section class="categoria-bloco">
+      <div class="categoria-header">
+        <span class="cat-num">★</span>
+        <h2 class="cat-title">Bônus: Prompts de Refinamento & Escala</h2>
+      </div>
+      <div class="prompts-grid">
+        <div class="prompt-card">
+          <div class="card-top">
+            <span class="prompt-tag">Refinador de Tom Executivo</span>
+            <span class="prompt-num">#55</span>
+          </div>
+          <div class="prompt-body" id="p55">Reescreva este texto eliminando adjetivos vagos e tornando o tom mais assertivo, maduro e executivo: [cole o texto].</div>
+          <button class="btn-copy" onclick="copiarPrompt('p55', this)">📋 Copiar Prompt</button>
+        </div>
+
+        <div class="prompt-card">
+          <div class="card-top">
+            <span class="prompt-tag">Multiplicador de Retenção</span>
+            <span class="prompt-num">#56</span>
+          </div>
+          <div class="prompt-body" id="p56">Transforme esta frase inicial em 3 ganchos magnéticos que instigam curiosidade profunda sem apelar para sensacionalismo: [frase].</div>
+          <button class="btn-copy" onclick="copiarPrompt('p56', this)">📋 Copiar Prompt</button>
+        </div>
+
+        <div class="prompt-card">
+          <div class="card-top">
+            <span class="prompt-tag">Extrator de Dores e Insights</span>
+            <span class="prompt-num">#57</span>
+          </div>
+          <div class="prompt-body" id="p57">Analise esta transcrição de conversa de atendimento e extraia as 5 principais dores, 3 dúvidas recorrentes e 2 ideias de posts: [transcrição].</div>
+          <button class="btn-copy" onclick="copiarPrompt('p57', this)">📋 Copiar Prompt</button>
+        </div>
+
+        <div class="prompt-card">
+          <div class="card-top">
+            <span class="prompt-tag">Simulador de Objeções Reais</span>
+            <span class="prompt-num">#58</span>
+          </div>
+          <div class="prompt-body" id="p58">Atue como uma empresária cética de 40 anos avaliando comprar minha mentoria high ticket. Quais são as 5 perguntas difíceis que você me faria antes de fechar?</div>
+          <button class="btn-copy" onclick="copiarPrompt('p58', this)">📋 Copiar Prompt</button>
+        </div>
+
+        <div class="prompt-card">
+          <div class="card-top">
+            <span class="prompt-tag">Transformador de Ideia em Carrossel</span>
+            <span class="prompt-num">#59</span>
+          </div>
+          <div class="prompt-body" id="p59">Transforme este insight em um carrossel de 7 slides com ritmo editorial fluido, 1 conceito por slide e chamada para ação no Direct: [insight].</div>
+          <button class="btn-copy" onclick="copiarPrompt('p59', this)">📋 Copiar Prompt</button>
+        </div>
+
+        <div class="prompt-card">
+          <div class="card-top">
+            <span class="prompt-tag">Estruturador de Oferta Irresistível</span>
+            <span class="prompt-num">#60</span>
+          </div>
+          <div class="prompt-body" id="p60">Estruture uma oferta de mentoria individual com diagnóstico, 6 encontros ao vivo, plano de ação personalizado e acompanhamento de 90 dias para o nicho de [nicho].</div>
+          <button class="btn-copy" onclick="copiarPrompt('p60', this)">📋 Copiar Prompt</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bottom Grand Offer Section -->
+    <section class="offer-banner" style="margin-top: 50px;">
+      <div class="offer-badge">ESTEIRA COMPLETA DE VENDAS</div>
+      <h2 class="offer-title">Leve Sua Estrutura de IA para o Próximo Nível</h2>
+      <p class="offer-desc">
+        Acesse mais de 2.000 prompts organizados por nível de consciência, esteiras completas de automação e modelos prontos de conversão validados na prática.
+      </p>
+      <a href="https://prompts.silvanarosa.com.br/" target="_blank" class="btn-main-offer">
+        Garantir Acesso ao Acervo Completo em Prompts.SilvanaRosa.com.br ────→
+      </a>
+    </section>
+
+    <footer class="footer">
+      <p>© 2026 Silvana Rosa · Todos os direitos reservados.</p>
+      <p style="margin-top: 6px; font-size: 13px; color: var(--gold-champagne);">Posicionamento Executivo e Monetização de Conhecimento.</p>
+    </footer>
+  </main>
+
+  <script>
+    function copiarPrompt(id, btn) {
+      const texto = document.getElementById(id).innerText;
+      navigator.clipboard.writeText(texto).then(() => {
+        const textoOriginal = btn.innerHTML;
+        btn.innerHTML = '✓ Copiado!';
+        btn.classList.add('copied');
+        setTimeout(() => {
+          btn.innerHTML = textoOriginal;
+          btn.classList.remove('copied');
+        }, 2000);
+      });
+    }
+  </script>
+</body>
+</html>
