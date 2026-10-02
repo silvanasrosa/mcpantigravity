@@ -828,8 +828,8 @@
       <button onclick="window.print()" class="btn btn-outline" title="Exportar este documento em PDF de alta qualidade">
         🖨️ Salvar em PDF
       </button>
-      <a href="#calculadora" class="btn btn-gold">
-        ⚡ Simular Faturamento
+      <a href="https://wa.me/5511985798767?text=Ol%C3%A1%2C%20Silvana!%20Estou%20lendo%20o%20Blueprint%20da%20Mentoria%20High-Ticket%20e%20gostaria%20de%20conversar." target="_blank" rel="noopener" class="btn btn-gold">
+        💬 Falar com a Silvana
       </a>
     </div>
   </header>
@@ -1216,6 +1216,9 @@
         <div id="promessa-output" class="generated-promise">
           <h5>Sua Promessa High-Ticket Compilada:</h5>
           <p id="promessa-texto">Preencha os campos acima para gerar sua declaração de valor.</p>
+          <button onclick="enviarWhatsAppCanvas()" class="btn btn-gold" style="width: 100%; justify-content: center; margin-top: 14px; background: linear-gradient(135deg, #25D366, #128C7E); color: #FFFFFF; border: none; font-size: 14px; box-shadow: 0 4px 15px rgba(37, 211, 102, 0.35);">
+            📲 Enviar Meu Diagnóstico para Análise da Silvana Rosa
+          </button>
         </div>
       </div>
     </article>
@@ -1262,8 +1265,8 @@
         <p>
           Não passe mais um ano trocando horas por pouco dinheiro ou tentando decifrar o digital sozinha. Venha para a mesa de quem vive e respira estratégia de alto ticket todos os dias.
         </p>
-        <a href="https://instagram.com/eu.silvanarosa" target="_blank" rel="noopener" class="btn btn-gold" style="font-size: 15px; padding: 14px 32px;">
-          💬 Fale com Silvana Rosa no Instagram (@eu.silvanarosa)
+        <a href="https://wa.me/5511985798767?text=Ol%C3%A1%2C%20Silvana!%20Li%20o%20Blueprint%20da%20Mentoria%20High-Ticket%20e%20gostaria%20de%20conversar%20sobre%20a%20minha%20mentoria." target="_blank" rel="noopener" class="btn btn-gold" style="font-size: 15px; padding: 14px 32px;">
+          💬 Conversar com Silvana Rosa
         </a>
       </div>
 
@@ -1335,6 +1338,17 @@
       const outText = document.getElementById('promessa-texto');
       outText.innerText = texto;
       outBox.style.display = 'block';
+    }
+
+    function enviarWhatsAppCanvas() {
+      const nicho = document.getElementById('mentor-nicho').value.trim() || 'Não informado';
+      const pontoA = document.getElementById('mentor-ponto-a').value.trim() || 'Não informado';
+      const pontoB = document.getElementById('mentor-ponto-b').value.trim() || 'Não informado';
+      const promessa = document.getElementById('promessa-texto').innerText || '';
+
+      const msg = `Olá Silvana! Preenchi o Canvas da Mentoria High-Ticket:\n\n🎯 Nicho: ${nicho}\n⚠️ Ponto A (Dor atual): ${pontoA}\n💎 Ponto B (Transformação): ${pontoB}\n\n✨ Promessa Compilada:\n${promessa}\n\nGostaria da sua avaliação e de saber como você pode me ajudar a estruturar e validar essa mentoria.`;
+      const url = `https://wa.me/5511985798767?text=${encodeURIComponent(msg)}`;
+      window.open(url, '_blank');
     }
 
     window.addEventListener('DOMContentLoaded', carregarCanvas);
